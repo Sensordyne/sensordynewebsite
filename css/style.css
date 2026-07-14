@@ -435,7 +435,7 @@ summary:focus-visible,
 }
 
 .scene--pinned {
-  height: 320vh;
+  height: 560vh;
 }
 
 .scene__canvas {
@@ -463,32 +463,6 @@ summary:focus-visible,
   pointer-events: none;
 }
 
-.scene__hud {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  padding-inline: var(--gutter);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--ink-faint);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-.scene__hud strong {
-  color: var(--accent-bright);
-  font-weight: 500;
-}
-
-.scene__hud--inner {
-  opacity: 0;
-}
-
 .scene__prompt {
   position: absolute;
   left: 50%;
@@ -499,44 +473,57 @@ summary:focus-visible,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-faint);
+  z-index: 2;
 }
 
 /* ==========================================================================
-   Reach — globe scene
+   Scene captions — five phases, one per journey segment, crossfading
    ========================================================================== */
 
-.globe {
-  position: relative;
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.globe__stage {
-  position: relative;
-  height: 60vh;
-  min-height: 420px;
-  max-height: 620px;
-  margin-top: 1rem;
-}
-
-.globe__canvas {
+.scene__caption {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+}
+
+.scene__caption-eyebrow {
   display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: 0.75rem;
 }
-.globe__canvas[hidden] { display: none; }
 
-.globe__fallback {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.scene__caption-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--ink);
 }
-.globe__fallback svg { width: 100%; max-width: 480px; height: auto; }
+
+.scene__caption-desc {
+  margin-top: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+
+@media (max-width: 699px) {
+  .scene__caption-title { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+  .scene__caption-desc { font-size: 0.9375rem; }
+}
 
 /* ==========================================================================
    Metrics strip

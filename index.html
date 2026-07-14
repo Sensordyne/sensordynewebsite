@@ -64,28 +64,11 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container hero__inner">
-      <h1 class="hero__title">One device. Any vision task.</h1>
-      <p class="hero__subtitle">SensorDyme is a modular edge-AI platform that turns a sub-$150 device into real-time computer vision — with nothing ever leaving the device. One core, six perception modules, and growing.</p>
-      <div class="hero__actions">
-        <a class="btn btn--solid" href="mailto:hello@sensordyme.com?subject=Product%20Purchase%20Inquiry">Purchase Product</a>
-        <a class="btn btn--ghost" href="#technology">See the Technology</a>
-      </div>
-      <div class="hero__tags">
-        <span class="tag-pill">Fleet &amp; Transportation</span>
-        <span class="tag-pill">Education</span>
-        <span class="tag-pill">Industrial &amp; Logistics</span>
-        <span class="tag-pill">Senior Care</span>
-        <span class="tag-pill">Retail &amp; Facilities</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEVICE SCENE — procedural wireframe model, scroll-driven on desktop -->
+  <!-- DEVICE SCENE — the homepage opener. A single continuous, scroll-driven
+       journey through five procedural visualizations, each one narrating a
+       real, already-established fact about the product (see js/scene.js). -->
   <section class="scene" id="deviceScene">
-    <div class="scene__stage">
+    <div class="scene__stage" id="top">
       <canvas class="scene__canvas" id="sceneCanvas" hidden aria-hidden="true"></canvas>
 
       <div class="scene__fallback" id="sceneFallback">
@@ -115,16 +98,53 @@
 
       <p class="scene__prompt" aria-hidden="true">Scroll to explore</p>
 
-      <div class="scene__hud" id="sceneHudOuter" aria-hidden="true">
-        <span class="scene__hud-item">Throughput <strong>25–30 FPS</strong></span>
-        <span class="scene__hud-item">Storage <strong>0 frames</strong></span>
-        <span class="scene__hud-item">Compute <strong>On-device</strong></span>
+      <div class="scene__caption" id="sceneCaption0" aria-hidden="true">
+        <span class="scene__caption-eyebrow">01 — Hardware</span>
+        <h1 class="scene__caption-title">One device.</h1>
+        <p class="scene__caption-desc">Sub-$150, built on Raspberry Pi 5 class hardware. No GPU, no accelerator card required.</p>
       </div>
 
-      <div class="scene__hud scene__hud--inner" id="sceneHudInner" aria-hidden="true">
-        <span class="scene__hud-item">Model <strong>MediaPipe + YOLO-nano</strong></span>
-        <span class="scene__hud-item">Latency <strong>Under 40ms</strong></span>
-        <span class="scene__hud-item">Output <strong>Landmarks, not video</strong></span>
+      <div class="scene__caption" id="sceneCaption1" aria-hidden="true">
+        <span class="scene__caption-eyebrow">02 — Performance</span>
+        <h2 class="scene__caption-title">Real-time, on-device.</h2>
+        <p class="scene__caption-desc">25–30 frames per second, processed locally — no round trip to a server in the critical path.</p>
+      </div>
+
+      <div class="scene__caption" id="sceneCaption2" aria-hidden="true">
+        <span class="scene__caption-eyebrow">03 — Privacy</span>
+        <h2 class="scene__caption-title">Landmarks, not video.</h2>
+        <p class="scene__caption-desc">The model outputs coordinates and scores — never frames. Nothing is stored, ever.</p>
+      </div>
+
+      <div class="scene__caption" id="sceneCaption3" aria-hidden="true">
+        <span class="scene__caption-eyebrow">04 — Modularity</span>
+        <h2 class="scene__caption-title">One core. Six modules.</h2>
+        <p class="scene__caption-desc">Driver attention, occupancy, fall detection, and more — swappable in software, not hardware.</p>
+      </div>
+
+      <div class="scene__caption" id="sceneCaption4" aria-hidden="true">
+        <span class="scene__caption-eyebrow">05 — Reach</span>
+        <h2 class="scene__caption-title">Works anywhere.</h2>
+        <p class="scene__caption-desc">No cloud dependency, no data center. If a site has power and a camera mount, a module can run.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO CONCLUDE — summary + primary CTAs, right after the journey -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <h2 class="hero__title">Any vision task. One device.</h2>
+      <p class="hero__subtitle">SensorDyme is a modular edge-AI platform that turns a sub-$150 device into real-time computer vision — with nothing ever leaving the device. One core, six perception modules, and growing.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="mailto:hello@sensordyme.com?subject=Product%20Purchase%20Inquiry">Purchase Product</a>
+        <a class="btn btn--ghost" href="#technology">See the Technology</a>
+      </div>
+      <div class="hero__tags">
+        <span class="tag-pill">Fleet &amp; Transportation</span>
+        <span class="tag-pill">Education</span>
+        <span class="tag-pill">Industrial &amp; Logistics</span>
+        <span class="tag-pill">Senior Care</span>
+        <span class="tag-pill">Retail &amp; Facilities</span>
       </div>
     </div>
   </section>
@@ -321,36 +341,14 @@
     </div>
   </section>
 
-  <!-- REACH / GLOBE -->
-  <section class="globe" id="globeScene">
+  <!-- REACH — the globe visual now lives in the opening journey (phase 5);
+       this section carries the full text explanation of the same claim. -->
+  <section class="section section--gradient" id="globeScene">
     <div class="container">
       <div class="section-header fade-up">
         <span class="eyebrow">Reach</span>
         <h2 class="section-title">Works wherever a camera already does.</h2>
         <p class="section-subtitle">SensorDyme doesn't depend on a specific data center, network, or region. If a site has power and a mounting point for a camera, a module can run there — connected or not.</p>
-      </div>
-    </div>
-
-    <div class="globe__stage fade-up">
-      <canvas class="globe__canvas" id="globeCanvas" hidden aria-hidden="true"></canvas>
-      <div class="globe__fallback" id="globeFallback">
-        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="globeFallbackTitle">
-          <title id="globeFallbackTitle">Illustration of a globe with connected nodes</title>
-          <circle cx="200" cy="200" r="150" stroke="#343A44" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="150" ry="55" stroke="#23272F" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="150" ry="110" stroke="#23272F" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="55" ry="150" stroke="#23272F" stroke-width="1"/>
-          <ellipse cx="200" cy="200" rx="110" ry="150" stroke="#23272F" stroke-width="1"/>
-          <path d="M90 150 Q200 60 310 180" stroke="#2563EB" stroke-width="1.2" opacity="0.6"/>
-          <path d="M100 260 Q200 340 300 230" stroke="#2563EB" stroke-width="1.2" opacity="0.6"/>
-          <g fill="#6D9BFF">
-            <circle cx="90" cy="150" r="4"/>
-            <circle cx="310" cy="180" r="4"/>
-            <circle cx="100" cy="260" r="4"/>
-            <circle cx="300" cy="230" r="4"/>
-            <circle cx="200" cy="70" r="4"/>
-          </g>
-        </svg>
       </div>
     </div>
   </section>
@@ -543,6 +541,5 @@
 
 <script src="js/main.js"></script>
 <script type="module" src="js/scene.js"></script>
-<script type="module" src="js/globe.js"></script>
 </body>
 </html>

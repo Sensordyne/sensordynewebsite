@@ -1,38 +1,37 @@
 # SensorDyme — Marketing Site
 
-A static marketing site for SensorDyme, a modular edge computer-vision platform. Dark, technical theme with a scroll-driven 3D device scene in the hero. Plain HTML, CSS, and vanilla JS — no framework, no build step, no npm install.
+A static marketing site for SensorDyme, a modular edge computer-vision platform. The homepage opens directly into a scroll-driven 3D product journey rather than a text banner. Dark, technical theme throughout. Plain HTML, CSS, and vanilla JS — no framework, no build step, no npm install.
 
 ## Structure
 
 ```
-index.html          Home page (hero, 3D device scene, use cases, comparison, reach/globe, technology, how it works, privacy, research, pilot CTA)
+index.html          Home page: 3D product journey, summary + CTA, use cases, comparison,
+                     reach, technology, how it works, privacy, research, pilot CTA
 technology.html      Technical deep dive (architecture, 6-module table, privacy data flow, 7-question FAQ)
 css/style.css        Design tokens + all styles for both pages (dark theme)
 js/main.js           Sticky nav, mobile menu, staggered scroll-reveal, count-up stats
-js/scene.js          Hero 3D device scene (Three.js via CDN ES module) — see below
-js/globe.js          "Reach" section globe scene (Three.js via CDN ES module) — see below
+js/scene.js          The homepage 3D journey (Three.js via CDN ES module) — see below
 assets/logo.svg       Horizontal lockup (icon + wordmark) for nav/footer
 assets/logo-mark.svg  Icon-only mark, used for favicon and the pilot-section watermark
 ```
 
-## 3D device scene
+## The homepage 3D journey
 
-The hero includes a procedural visualization of the SensorDyme device (body, camera lens, field-of-view rays) built from Three.js primitives — not a traced or purchased 3D model. On desktop with no reduced-motion preference, the scene pins in place across a tall scroll region and plays out in two phases as you scroll:
+Instead of a headline banner, the homepage opens directly into a single continuous, scroll-driven visualization built from Three.js primitives — no traced, purchased, or copied 3D assets anywhere. On desktop with no reduced-motion preference, the scene pins in place across a tall scroll region and narrates five real, already-established product facts in sequence:
 
-1. **Outside**: camera dollies in from a wide establishing shot to a close view of the lens.
-2. **Inside**: the device wireframe fades out and the camera pushes through into an abstract node-graph — a generic layered network illustration standing in for "the on-device model," not a depiction of MediaPipe's or YOLO's actual published architecture. A HUD readout crossfades from throughput/storage/compute facts to model/latency/output facts as the transition happens.
+1. **Hardware** — wide establishing shot of the physical device. *"One device." Sub-$150, Raspberry Pi 5 class.*
+2. **Performance** — camera holds on the lens. *"Real-time, on-device." 25–30 FPS, no server round trip.*
+3. **Privacy** — the device wireframe fades out as the camera pushes through into an abstract node-graph (a generic layered-network illustration standing in for "the model," not a depiction of MediaPipe's or YOLO's actual published architecture). *"Landmarks, not video."*
+4. **Modularity** — the camera reframes within the node-graph. *"One core. Six modules."*
+5. **Reach** — the node-graph fades into an abstract wireframe globe with a few connected nodes and pulsing arcs — a "works anywhere" motif, not a map. Node positions are arbitrary spherical coordinates, not real-world locations, and nothing here claims specific customer counts or deployment sites. *"Works anywhere."*
 
-On mobile, or with reduced motion, it simplifies to a static or gently auto-rotating outside-only view (no scroll-pin, no phase transition).
+Each phase has a matching caption (eyebrow + title + description) that crossfades in as its segment of the scroll becomes active; the first is fully visible on load and the last stays fully visible through the end of the scroll, so the journey both opens and lands cleanly. Right after the journey, a compact summary panel with the primary CTAs ("Purchase Product" / "See the Technology") continues the page as normal. The "Reach" theme also gets a full text section later in the page for readers who want the detailed claim in prose.
 
-## Reach / globe scene
+On mobile, or with reduced motion, the journey simplifies to a static or gently auto-rotating device-only view (no scroll-pin, no phase transitions) — the five captions collapse to just the first one.
 
-The "Reach" section (between Why Edge and Technology) has a slowly-rotating wireframe globe with a handful of connected nodes and pulsing arcs — an abstract "works anywhere" motif, not a map. The node positions are arbitrary spherical coordinates, not real-world locations, and nothing in the visualization or its copy claims specific customer counts or deployment sites — see the section copy in `index.html` for the actual (honest) claim being made.
+Three.js loads as an ES module straight from a CDN (`import` from `cdn.jsdelivr.net`, pinned to a specific version) — there is no `npm install` and no bundler involved, so the deploy story stays exactly the same as the rest of the site.
 
-## Both 3D scenes
-
-Three.js loads as an ES module straight from a CDN (`import` from `cdn.jsdelivr.net`, pinned to a specific version) in both `js/scene.js` and `js/globe.js` — there is no `npm install` and no bundler involved, so the deploy story stays exactly the same as the rest of the site.
-
-**Fallback behavior**: `#sceneFallback` and `#globeFallback` (flat SVG illustrations) are visible by default in the HTML. Each script only hides its fallback after WebGL support is confirmed and that scene has successfully initialized. If JavaScript is disabled, the CDN is unreachable, WebGL is unsupported, or anything else goes wrong, the page simply keeps showing the static SVG — there's no broken or blank state. This was verified by explicitly blocking the CDN in a real browser and confirming the page still renders coherently.
+**Fallback behavior**: `#sceneFallback` (a flat SVG illustration) is visible by default in the HTML. `js/scene.js` only hides it after WebGL support is confirmed and the scene has successfully initialized. If JavaScript is disabled, the CDN is unreachable, WebGL is unsupported, or anything else goes wrong, the page simply keeps showing the static SVG — there's no broken or blank state. This was verified by explicitly blocking the CDN in a real browser and confirming the page still renders coherently.
 
 ## Local preview
 
