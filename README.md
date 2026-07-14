@@ -5,11 +5,12 @@ A static marketing site for SensorDyme, a modular edge computer-vision platform.
 ## Structure
 
 ```
-index.html          Home page (hero, platform, technology, privacy, research, pilot CTA)
-technology.html      Technical deep dive (architecture, module table, privacy data flow, FAQ)
+index.html          Home page (hero, use cases, comparison, technology, how it works, privacy, research, pilot CTA)
+technology.html      Technical deep dive (architecture, 6-module table, privacy data flow, 7-question FAQ)
 css/style.css        Design tokens + all styles for both pages
-js/main.js           Sticky nav state, mobile menu, scroll-reveal animations
-assets/logo.svg       Placeholder wordmark (see note below)
+js/main.js           Sticky nav, mobile menu, staggered scroll-reveal, count-up stats
+assets/logo.svg       Horizontal lockup (icon + wordmark) for nav/footer
+assets/logo-mark.svg  Icon-only mark, used for favicon and the pilot-section watermark
 ```
 
 ## Local preview
@@ -49,11 +50,11 @@ This repo includes a `CNAME` file pointing at `sensordyme.com`, so GitHub Pages 
 
 ## Notes on the logo
 
-The brief specifies a logo at `assets/logo.png` (a black hexagonal "S" mark + "SENSORDYME" wordmark). No such file existed in this repository, so `assets/logo.svg` was created as a code-drawn stand-in matching that description. To swap in the real asset:
+`assets/logo-mark.svg` (the hexagonal "S" icon) and `assets/logo.svg` (icon + "SENSORDYME" wordmark) are a hand-drawn vector recreation of the supplied logo image — built as SVG paths, not traced from the source file, so it's a close but not pixel-perfect match. If you have the original vector (AI/EPS/SVG) file, swap it in for exact fidelity:
 
-1. Add the real logo file to `assets/` (SVG is preferable to PNG since it stays crisp at any size and works cleanly with the `filter: invert(1)` trick used to render it white on dark sections).
-2. Update the `src` on the `<img>` tags in the `.nav__logo` and `.footer__logo` elements in `index.html` and `technology.html`.
-3. Update the `og:image` meta tag in both files if you want the real logo in social link previews (a raster PNG/JPG is recommended there, since not all platforms render SVG previews).
+1. Replace `assets/logo.svg` (horizontal lockup) and `assets/logo-mark.svg` (icon only, used for the favicon and the watermark in the pilot section) with the real files, keeping the same filenames so no HTML changes are needed.
+2. The dark sections apply `filter: invert(1)` to render the mark in white — this works with any black-on-transparent SVG or PNG, so no extra dark-mode asset is required.
+3. Update the `og:image` meta tag in both HTML files if you want the real logo in social link previews (a raster PNG/JPG is recommended there, since not all platforms render SVG previews).
 
 ## Content placeholders to review before launch
 

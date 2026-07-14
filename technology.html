@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Technology — SensorDyme">
 <meta name="twitter:description" content="The engineering behind SensorDyme's on-device computer vision platform.">
 
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,8 @@
     </a>
 
     <nav class="nav__links" aria-label="Primary">
-      <a class="nav__link" href="index.html#platform">Platform</a>
+      <a class="nav__link" href="index.html#platform">Use Cases</a>
+      <a class="nav__link" href="index.html#comparison">Why Edge</a>
       <a class="nav__link" href="technology.html">Technology</a>
       <a class="nav__link" href="index.html#privacy">Privacy</a>
       <a class="nav__link" href="index.html#research">Research</a>
@@ -50,7 +51,8 @@
 
   <div class="nav__mobile" id="navMobile">
     <div class="container nav__mobile-inner">
-      <a class="nav__link" href="index.html#platform">Platform</a>
+      <a class="nav__link" href="index.html#platform">Use Cases</a>
+      <a class="nav__link" href="index.html#comparison">Why Edge</a>
       <a class="nav__link" href="technology.html">Technology</a>
       <a class="nav__link" href="index.html#privacy">Privacy</a>
       <a class="nav__link" href="index.html#research">Research</a>
@@ -123,7 +125,7 @@
         </div>
       </div>
 
-      <div class="fade-up" style="margin-top: 4rem;">
+      <div class="fade-up" style="margin-top: 4rem;" id="modules">
         <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Modules available today</h3>
         <div class="table-wrap">
           <table class="module-table">
@@ -132,23 +134,45 @@
                 <th scope="col">Task</th>
                 <th scope="col">Model</th>
                 <th scope="col">Typical FPS</th>
+                <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Driver Attention</td>
+                <td>Driver Distraction</td>
                 <td>MediaPipe Face Mesh</td>
                 <td>~28 FPS</td>
+                <td>Live</td>
+              </tr>
+              <tr>
+                <td>Exam Proctoring</td>
+                <td>MediaPipe Face Mesh + gaze heuristics</td>
+                <td>~27 FPS</td>
+                <td>Beta</td>
+              </tr>
+              <tr>
+                <td>Warehouse &amp; Industrial Safety</td>
+                <td>YOLO-nano (PPE + zone detection)</td>
+                <td>~25 FPS</td>
+                <td>Beta</td>
               </tr>
               <tr>
                 <td>Occupancy &amp; Presence</td>
                 <td>YOLO-nano + lightweight tracking</td>
                 <td>~26 FPS</td>
+                <td>Live</td>
               </tr>
               <tr>
                 <td>Pose &amp; Fall Detection</td>
                 <td>MediaPipe Pose + posture classifier</td>
                 <td>~24 FPS</td>
+                <td>Live</td>
+              </tr>
+              <tr>
+                <td>People Counting &amp; Queue Analytics</td>
+                <td>YOLO-nano + multi-object tracking</td>
+                <td>~23 FPS</td>
+                <td>Roadmap</td>
               </tr>
             </tbody>
           </table>
@@ -212,6 +236,14 @@
           <summary>What does the pilot process look like?</summary>
           <p>Pilots typically start with a short scoping call, followed by a fixed-term deployment of one to a handful of devices at a single site. We review accuracy and operational fit together at the end of the term before discussing a broader rollout.</p>
         </details>
+        <details>
+          <summary>Can exam proctoring run without recording students?</summary>
+          <p>Yes — the proctoring module outputs gaze and attention signals only. No frame is ever written to disk, so there is no recording to store, request, or accidentally retain past the exam window.</p>
+        </details>
+        <details>
+          <summary>How does SensorDyme integrate with our existing systems?</summary>
+          <p>Each module emits structured events — a score, a count, an alert — over a simple local API. Most sites route these into whatever ticketing, dashboard, or notification tool they already use rather than adopting a new one.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -221,11 +253,14 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <a class="footer__logo" href="index.html" aria-label="SensorDyme home">
-        <img src="assets/logo.svg" alt="SensorDyme">
-      </a>
+      <div>
+        <a class="footer__logo" href="index.html" aria-label="SensorDyme home">
+          <img src="assets/logo.svg" alt="SensorDyme">
+        </a>
+        <p class="footer__tagline">Modular edge computer vision for teams that already have a camera.</p>
+      </div>
       <nav class="footer__links" aria-label="Footer">
-        <a href="index.html#platform">Platform</a>
+        <a href="index.html#platform">Use Cases</a>
         <a href="technology.html">Technology</a>
         <a href="index.html#privacy">Privacy</a>
         <a href="index.html#research">Research</a>
