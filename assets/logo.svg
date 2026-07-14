@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 40" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">SensorDyme</title>
+  <g fill="none" stroke="#0A0A0A" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="20,2 35,10.5 35,27.5 20,36 5,27.5 5,10.5" />
+    <path d="M13.5 25.5C13.5 28.5 16 30.5 19.5 30.5C23.5 30.5 26 28.3 26 25.3C26 22 23.5 20.7 19.8 19.8C16.3 18.9 14.2 17.7 14.2 14.8C14.2 12 16.5 9.9 20 9.9C23.2 9.9 25.5 11.7 25.8 14.4" />
+  </g>
+  <text x="46" y="26.5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="19" letter-spacing="1.5" fill="#0A0A0A">SENSORDYME</text>
+</svg>
