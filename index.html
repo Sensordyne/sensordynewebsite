@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SensorDyme — Modular Edge Computer Vision</title>
 <meta name="description" content="SensorDyme turns a sub-$150 device into real-time, on-device computer vision for driver distraction, exam proctoring, warehouse safety, occupancy, fall detection, and people counting — with nothing ever leaving the device.">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#08090C">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="SensorDyme — Modular Edge Computer Vision">
@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -81,36 +81,44 @@
         <span class="tag-pill">Retail &amp; Facilities</span>
       </div>
     </div>
+  </section>
 
-    <div class="container hero__product">
-      <div class="hero__product-frame fade-up">
-        <img
-          class="hero__product-img"
-          src="assets/product-hero.jpg"
-          alt="SensorDyme device mounted and running on-device detection"
-          loading="eager"
-          onerror="this.remove(); document.getElementById('heroPlaceholder').hidden=false;">
-        <div class="hero__product-placeholder" id="heroPlaceholder" hidden aria-hidden="true">
-          <svg viewBox="0 0 640 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#D4D4D8" stroke-width="1">
-              <line x1="320" y1="266" x2="70" y2="40"/>
-              <line x1="320" y1="266" x2="195" y2="20"/>
-              <line x1="320" y1="266" x2="320" y2="12"/>
-              <line x1="320" y1="266" x2="445" y2="20"/>
-              <line x1="320" y1="266" x2="570" y2="40"/>
-            </g>
-            <path d="M150 150 A 195 195 0 0 1 490 150" stroke="#E4E4E7" stroke-width="1" fill="none"/>
-            <path d="M215 78 A 260 260 0 0 1 425 78" stroke="#E4E4E7" stroke-width="1" fill="none"/>
-            <g fill="#0A0A0A">
-              <circle cx="150" cy="150" r="3"/>
-              <circle cx="320" cy="112" r="3"/>
-              <circle cx="490" cy="150" r="3"/>
-            </g>
-            <rect x="268" y="266" width="104" height="56" rx="12" stroke="#0A0A0A" stroke-width="2"/>
-            <circle cx="320" cy="294" r="15" stroke="#2563EB" stroke-width="2"/>
-            <circle cx="320" cy="294" r="4" fill="#2563EB"/>
-          </svg>
-        </div>
+  <!-- DEVICE SCENE — procedural wireframe model, scroll-driven on desktop -->
+  <section class="scene" id="deviceScene">
+    <div class="scene__stage">
+      <canvas class="scene__canvas" id="sceneCanvas" hidden aria-hidden="true"></canvas>
+
+      <div class="scene__fallback" id="sceneFallback">
+        <svg viewBox="0 0 640 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sceneFallbackTitle">
+          <title id="sceneFallbackTitle">Illustration of the SensorDyme device with a radiating field of view</title>
+          <g stroke="#343A44" stroke-width="1">
+            <line x1="320" y1="266" x2="70" y2="40"/>
+            <line x1="320" y1="266" x2="195" y2="20"/>
+            <line x1="320" y1="266" x2="320" y2="12"/>
+            <line x1="320" y1="266" x2="445" y2="20"/>
+            <line x1="320" y1="266" x2="570" y2="40"/>
+          </g>
+          <path d="M150 150 A 195 195 0 0 1 490 150" stroke="#23272F" stroke-width="1" fill="none"/>
+          <path d="M215 78 A 260 260 0 0 1 425 78" stroke="#23272F" stroke-width="1" fill="none"/>
+          <g fill="#F2F3F5">
+            <circle cx="150" cy="150" r="3"/>
+            <circle cx="320" cy="112" r="3"/>
+            <circle cx="490" cy="150" r="3"/>
+          </g>
+          <rect x="268" y="266" width="104" height="56" rx="6" stroke="#F2F3F5" stroke-width="2"/>
+          <circle cx="320" cy="294" r="15" stroke="#2563EB" stroke-width="2"/>
+          <circle cx="320" cy="294" r="4" fill="#2563EB"/>
+        </svg>
+      </div>
+
+      <div class="scene__vignette" aria-hidden="true"></div>
+
+      <p class="scene__prompt" aria-hidden="true">Scroll to explore</p>
+
+      <div class="scene__hud" aria-hidden="true">
+        <span class="scene__hud-item">Throughput <strong>25–30 FPS</strong></span>
+        <span class="scene__hud-item">Storage <strong>0 frames</strong></span>
+        <span class="scene__hud-item">Compute <strong>On-device</strong></span>
       </div>
     </div>
   </section>
@@ -258,7 +266,7 @@
         </article>
       </div>
 
-      <p class="platform__note fade-up">Adding a capability is a software module — not new hardware. <a class="tech__link" style="color:var(--color-accent);border-color:var(--gray-300);display:inline;margin-top:0;padding-bottom:1px;" href="technology.html#modules">See the full module list and FPS benchmarks →</a></p>
+      <p class="platform__note fade-up">Adding a capability is a software module — not new hardware. <a class="tech__link" style="color:var(--accent-bright);border-color:var(--line-strong);display:inline;margin-top:0;padding-bottom:1px;" href="technology.html#modules">See the full module list and FPS benchmarks →</a></p>
     </div>
   </section>
 
@@ -494,5 +502,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script type="module" src="js/scene.js"></script>
 </body>
 </html>

@@ -1,17 +1,26 @@
 # SensorDyme — Marketing Site
 
-A static marketing site for SensorDyme, a modular edge computer-vision platform. Plain HTML, CSS, and vanilla JS — no framework, no build step.
+A static marketing site for SensorDyme, a modular edge computer-vision platform. Dark, technical theme with a scroll-driven 3D device scene in the hero. Plain HTML, CSS, and vanilla JS — no framework, no build step, no npm install.
 
 ## Structure
 
 ```
-index.html          Home page (hero, use cases, comparison, technology, how it works, privacy, research, pilot CTA)
+index.html          Home page (hero, 3D device scene, use cases, comparison, technology, how it works, privacy, research, pilot CTA)
 technology.html      Technical deep dive (architecture, 6-module table, privacy data flow, 7-question FAQ)
-css/style.css        Design tokens + all styles for both pages
+css/style.css        Design tokens + all styles for both pages (dark theme)
 js/main.js           Sticky nav, mobile menu, staggered scroll-reveal, count-up stats
+js/scene.js          3D device scene (Three.js via CDN ES module) — see "3D device scene" below
 assets/logo.svg       Horizontal lockup (icon + wordmark) for nav/footer
 assets/logo-mark.svg  Icon-only mark, used for favicon and the pilot-section watermark
 ```
+
+## 3D device scene
+
+The hero includes a procedural wireframe visualization of the SensorDyme device (body, camera lens, field-of-view rays) built from Three.js primitives — not a traced or purchased 3D model. On desktop with no reduced-motion preference, the scene pins in place while the camera dollies in as you scroll. On mobile, or with reduced motion, it simplifies to a static or gently auto-rotating view.
+
+Three.js loads as an ES module straight from a CDN (`js/scene.js` has an `import` from `cdn.jsdelivr.net`) — there is no `npm install` and no bundler involved, so the deploy story stays exactly the same as the rest of the site.
+
+**Fallback behavior**: `#sceneFallback` (a flat SVG of the device) is visible by default in the HTML. `js/scene.js` only hides it after WebGL support is confirmed and the 3D scene has successfully initialized. If JavaScript is disabled, the CDN is unreachable, WebGL is unsupported, or anything else goes wrong, the page simply keeps showing the static SVG — there's no broken or blank state.
 
 ## Local preview
 
