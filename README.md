@@ -5,22 +5,34 @@ A static marketing site for SensorDyme, a modular edge computer-vision platform.
 ## Structure
 
 ```
-index.html          Home page (hero, 3D device scene, use cases, comparison, technology, how it works, privacy, research, pilot CTA)
+index.html          Home page (hero, 3D device scene, use cases, comparison, reach/globe, technology, how it works, privacy, research, pilot CTA)
 technology.html      Technical deep dive (architecture, 6-module table, privacy data flow, 7-question FAQ)
 css/style.css        Design tokens + all styles for both pages (dark theme)
 js/main.js           Sticky nav, mobile menu, staggered scroll-reveal, count-up stats
-js/scene.js          3D device scene (Three.js via CDN ES module) — see "3D device scene" below
+js/scene.js          Hero 3D device scene (Three.js via CDN ES module) — see below
+js/globe.js          "Reach" section globe scene (Three.js via CDN ES module) — see below
 assets/logo.svg       Horizontal lockup (icon + wordmark) for nav/footer
 assets/logo-mark.svg  Icon-only mark, used for favicon and the pilot-section watermark
 ```
 
 ## 3D device scene
 
-The hero includes a procedural wireframe visualization of the SensorDyme device (body, camera lens, field-of-view rays) built from Three.js primitives — not a traced or purchased 3D model. On desktop with no reduced-motion preference, the scene pins in place while the camera dollies in as you scroll. On mobile, or with reduced motion, it simplifies to a static or gently auto-rotating view.
+The hero includes a procedural visualization of the SensorDyme device (body, camera lens, field-of-view rays) built from Three.js primitives — not a traced or purchased 3D model. On desktop with no reduced-motion preference, the scene pins in place across a tall scroll region and plays out in two phases as you scroll:
 
-Three.js loads as an ES module straight from a CDN (`js/scene.js` has an `import` from `cdn.jsdelivr.net`) — there is no `npm install` and no bundler involved, so the deploy story stays exactly the same as the rest of the site.
+1. **Outside**: camera dollies in from a wide establishing shot to a close view of the lens.
+2. **Inside**: the device wireframe fades out and the camera pushes through into an abstract node-graph — a generic layered network illustration standing in for "the on-device model," not a depiction of MediaPipe's or YOLO's actual published architecture. A HUD readout crossfades from throughput/storage/compute facts to model/latency/output facts as the transition happens.
 
-**Fallback behavior**: `#sceneFallback` (a flat SVG of the device) is visible by default in the HTML. `js/scene.js` only hides it after WebGL support is confirmed and the 3D scene has successfully initialized. If JavaScript is disabled, the CDN is unreachable, WebGL is unsupported, or anything else goes wrong, the page simply keeps showing the static SVG — there's no broken or blank state.
+On mobile, or with reduced motion, it simplifies to a static or gently auto-rotating outside-only view (no scroll-pin, no phase transition).
+
+## Reach / globe scene
+
+The "Reach" section (between Why Edge and Technology) has a slowly-rotating wireframe globe with a handful of connected nodes and pulsing arcs — an abstract "works anywhere" motif, not a map. The node positions are arbitrary spherical coordinates, not real-world locations, and nothing in the visualization or its copy claims specific customer counts or deployment sites — see the section copy in `index.html` for the actual (honest) claim being made.
+
+## Both 3D scenes
+
+Three.js loads as an ES module straight from a CDN (`import` from `cdn.jsdelivr.net`, pinned to a specific version) in both `js/scene.js` and `js/globe.js` — there is no `npm install` and no bundler involved, so the deploy story stays exactly the same as the rest of the site.
+
+**Fallback behavior**: `#sceneFallback` and `#globeFallback` (flat SVG illustrations) are visible by default in the HTML. Each script only hides its fallback after WebGL support is confirmed and that scene has successfully initialized. If JavaScript is disabled, the CDN is unreachable, WebGL is unsupported, or anything else goes wrong, the page simply keeps showing the static SVG — there's no broken or blank state. This was verified by explicitly blocking the CDN in a real browser and confirming the page still renders coherently.
 
 ## Local preview
 

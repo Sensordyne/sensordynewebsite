@@ -435,7 +435,7 @@ summary:focus-visible,
 }
 
 .scene--pinned {
-  height: 240vh;
+  height: 320vh;
 }
 
 .scene__canvas {
@@ -485,6 +485,10 @@ summary:focus-visible,
   font-weight: 500;
 }
 
+.scene__hud--inner {
+  opacity: 0;
+}
+
 .scene__prompt {
   position: absolute;
   left: 50%;
@@ -496,6 +500,43 @@ summary:focus-visible,
   text-transform: uppercase;
   color: var(--ink-faint);
 }
+
+/* ==========================================================================
+   Reach — globe scene
+   ========================================================================== */
+
+.globe {
+  position: relative;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.globe__stage {
+  position: relative;
+  height: 60vh;
+  min-height: 420px;
+  max-height: 620px;
+  margin-top: 1rem;
+}
+
+.globe__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.globe__canvas[hidden] { display: none; }
+
+.globe__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.globe__fallback svg { width: 100%; max-width: 480px; height: auto; }
 
 /* ==========================================================================
    Metrics strip

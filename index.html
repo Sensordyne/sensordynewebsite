@@ -115,10 +115,16 @@
 
       <p class="scene__prompt" aria-hidden="true">Scroll to explore</p>
 
-      <div class="scene__hud" aria-hidden="true">
+      <div class="scene__hud" id="sceneHudOuter" aria-hidden="true">
         <span class="scene__hud-item">Throughput <strong>25–30 FPS</strong></span>
         <span class="scene__hud-item">Storage <strong>0 frames</strong></span>
         <span class="scene__hud-item">Compute <strong>On-device</strong></span>
+      </div>
+
+      <div class="scene__hud scene__hud--inner" id="sceneHudInner" aria-hidden="true">
+        <span class="scene__hud-item">Model <strong>MediaPipe + YOLO-nano</strong></span>
+        <span class="scene__hud-item">Latency <strong>Under 40ms</strong></span>
+        <span class="scene__hud-item">Output <strong>Landmarks, not video</strong></span>
       </div>
     </div>
   </section>
@@ -315,6 +321,40 @@
     </div>
   </section>
 
+  <!-- REACH / GLOBE -->
+  <section class="globe" id="globeScene">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Reach</span>
+        <h2 class="section-title">Works wherever a camera already does.</h2>
+        <p class="section-subtitle">SensorDyme doesn't depend on a specific data center, network, or region. If a site has power and a mounting point for a camera, a module can run there — connected or not.</p>
+      </div>
+    </div>
+
+    <div class="globe__stage fade-up">
+      <canvas class="globe__canvas" id="globeCanvas" hidden aria-hidden="true"></canvas>
+      <div class="globe__fallback" id="globeFallback">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="globeFallbackTitle">
+          <title id="globeFallbackTitle">Illustration of a globe with connected nodes</title>
+          <circle cx="200" cy="200" r="150" stroke="#343A44" stroke-width="1"/>
+          <ellipse cx="200" cy="200" rx="150" ry="55" stroke="#23272F" stroke-width="1"/>
+          <ellipse cx="200" cy="200" rx="150" ry="110" stroke="#23272F" stroke-width="1"/>
+          <ellipse cx="200" cy="200" rx="55" ry="150" stroke="#23272F" stroke-width="1"/>
+          <ellipse cx="200" cy="200" rx="110" ry="150" stroke="#23272F" stroke-width="1"/>
+          <path d="M90 150 Q200 60 310 180" stroke="#2563EB" stroke-width="1.2" opacity="0.6"/>
+          <path d="M100 260 Q200 340 300 230" stroke="#2563EB" stroke-width="1.2" opacity="0.6"/>
+          <g fill="#6D9BFF">
+            <circle cx="90" cy="150" r="4"/>
+            <circle cx="310" cy="180" r="4"/>
+            <circle cx="100" cy="260" r="4"/>
+            <circle cx="300" cy="230" r="4"/>
+            <circle cx="200" cy="70" r="4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- TECHNOLOGY (dark) -->
   <section class="section section--dark" id="technology">
     <div class="container">
@@ -503,5 +543,6 @@
 
 <script src="js/main.js"></script>
 <script type="module" src="js/scene.js"></script>
+<script type="module" src="js/globe.js"></script>
 </body>
 </html>
