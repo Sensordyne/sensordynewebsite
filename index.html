@@ -64,33 +64,15 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container hero__inner">
-      <h1 class="hero__title">One device. Any vision task.</h1>
-      <p class="hero__subtitle">SensorDyme is a modular edge-AI platform that turns a sub-$150 device into real-time computer vision — with nothing ever leaving the device. One core, six perception modules, and growing.</p>
-      <div class="hero__actions">
-        <a class="btn btn--solid" href="mailto:hello@sensordyme.com?subject=Product%20Purchase%20Inquiry">Purchase Product</a>
-        <a class="btn btn--ghost" href="#technology">See the Technology</a>
-      </div>
-      <div class="hero__tags">
-        <span class="tag-pill">Fleet &amp; Transportation</span>
-        <span class="tag-pill">Education</span>
-        <span class="tag-pill">Industrial &amp; Logistics</span>
-        <span class="tag-pill">Senior Care</span>
-        <span class="tag-pill">Retail &amp; Facilities</span>
-      </div>
-    </div>
-  </section>
+  <!-- JOURNEY — pinned 3D scroll experience: fly through the device in 5 chapters -->
+  <section class="journey" id="top" data-journey>
+    <div class="journey__stage">
+      <div class="journey__aurora" aria-hidden="true"></div>
+      <canvas class="journey__canvas" id="journeyCanvas" aria-hidden="true"></canvas>
 
-  <!-- DEVICE SCENE — procedural wireframe model, scroll-driven on desktop -->
-  <section class="scene" id="deviceScene">
-    <div class="scene__stage">
-      <canvas class="scene__canvas" id="sceneCanvas" hidden aria-hidden="true"></canvas>
-
-      <div class="scene__fallback" id="sceneFallback">
-        <svg viewBox="0 0 640 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sceneFallbackTitle">
-          <title id="sceneFallbackTitle">Illustration of the SensorDyme device with a radiating field of view</title>
+      <div class="journey__fallback" aria-hidden="true">
+        <svg viewBox="0 0 640 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="journeyFallbackTitle">
+          <title id="journeyFallbackTitle">Illustration of the SensorDyme device with a radiating field of view</title>
           <g stroke="#343A44" stroke-width="1">
             <line x1="320" y1="266" x2="70" y2="40"/>
             <line x1="320" y1="266" x2="195" y2="20"/>
@@ -111,14 +93,103 @@
         </svg>
       </div>
 
-      <div class="scene__vignette" aria-hidden="true"></div>
+      <div class="journey__vignette" aria-hidden="true"></div>
 
-      <p class="scene__prompt" aria-hidden="true">Scroll to explore</p>
+      <!-- 00 · Hero -->
+      <div class="journey__panel journey__panel--hero" id="panelHero">
+        <h1 class="journey__title">One device.<br>Any vision task.</h1>
+        <p class="journey__subtitle">SensorDyme is a modular edge-AI platform that turns a sub-$150 device into real-time computer vision — with nothing ever leaving the device. One core, six perception modules, and growing.</p>
+        <div class="journey__actions">
+          <a class="btn btn--solid" href="mailto:hello@sensordyme.com?subject=Product%20Purchase%20Inquiry">Purchase Product</a>
+          <a class="btn btn--ghost" href="#technology">See the Technology</a>
+        </div>
+        <div class="journey__tags">
+          <span class="tag-pill">Fleet &amp; Transportation</span>
+          <span class="tag-pill">Education</span>
+          <span class="tag-pill">Industrial &amp; Logistics</span>
+          <span class="tag-pill">Senior Care</span>
+          <span class="tag-pill">Retail &amp; Facilities</span>
+        </div>
+      </div>
 
-      <div class="scene__hud" aria-hidden="true">
-        <span class="scene__hud-item">Throughput <strong>25–30 FPS</strong></span>
-        <span class="scene__hud-item">Storage <strong>0 frames</strong></span>
-        <span class="scene__hud-item">Compute <strong>On-device</strong></span>
+      <!-- 01 · Optics -->
+      <aside class="journey__panel journey__panel--left" id="panel1">
+        <span class="journey__chapter">01 / Optics</span>
+        <h2 class="journey__heading">It starts at the lens.</h2>
+        <p class="journey__body">A wide-angle camera module feeds the pipeline at up to 30 frames per second — wide enough for a warehouse aisle, fast enough for a driver's glance. Every frame it captures is analyzed and discarded in milliseconds.</p>
+        <dl class="journey__specs">
+          <div><dt>Field of view</dt><dd>~120° wide</dd></div>
+          <div><dt>Capture</dt><dd>25–30 FPS</dd></div>
+          <div><dt>Low light</dt><dd>IR-ready</dd></div>
+          <div><dt>Frames stored</dt><dd>0</dd></div>
+        </dl>
+      </aside>
+
+      <!-- 02 · Compute -->
+      <aside class="journey__panel journey__panel--right" id="panel2">
+        <span class="journey__chapter">02 / Compute</span>
+        <h2 class="journey__heading">A full vision computer, smaller than your palm.</h2>
+        <p class="journey__body">Raspberry Pi 5–class hardware runs the entire stack — no GPU, no accelerator card, no server on the other end. A quad-core CPU, passive cooling, and a bill of materials under $150.</p>
+        <dl class="journey__specs">
+          <div><dt>CPU</dt><dd>Quad-core ARM</dd></div>
+          <div><dt>Accelerator</dt><dd>None needed</dd></div>
+          <div><dt>Cost</dt><dd>&lt;$150</dd></div>
+          <div><dt>Power</dt><dd>&lt;10 W</dd></div>
+        </dl>
+      </aside>
+
+      <!-- 03 · Models -->
+      <aside class="journey__panel journey__panel--left" id="panel3">
+        <span class="journey__chapter">03 / Models</span>
+        <h2 class="journey__heading">Perception runs where the camera is.</h2>
+        <p class="journey__body">MediaPipe handles landmarks and pose; YOLO-nano handles lightweight detection. Swapping the perception task — attention, occupancy, pose, PPE, counting — is a software module. The hardware never changes.</p>
+        <dl class="journey__specs">
+          <div><dt>Landmarks</dt><dd>MediaPipe</dd></div>
+          <div><dt>Detection</dt><dd>YOLO-nano</dd></div>
+          <div><dt>Throughput</dt><dd>25–30 FPS</dd></div>
+          <div><dt>Modules</dt><dd>6 + growing</dd></div>
+        </dl>
+      </aside>
+
+      <!-- 04 · The boundary -->
+      <aside class="journey__panel journey__panel--right" id="panel4">
+        <span class="journey__chapter">04 / The Boundary</span>
+        <h2 class="journey__heading">Frames die here.</h2>
+        <p class="journey__body">Every frame is analyzed and destroyed on the board you just scrolled through. What crosses the boundary is landmarks, scores, and counts — never pixels. Unplug the network and it keeps working.</p>
+        <dl class="journey__specs">
+          <div><dt>Video out</dt><dd>None</dd></div>
+          <div><dt>Events out</dt><dd>Scores · counts</dd></div>
+          <div><dt>Offline</dt><dd>Fully functional</dd></div>
+          <div><dt>Latency</dt><dd>&lt;40 ms</dd></div>
+        </dl>
+      </aside>
+
+      <!-- 05 · Deploy -->
+      <div class="journey__panel journey__panel--hero journey__panel--end" id="panel5">
+        <span class="journey__chapter">05 / Deploy</span>
+        <h2 class="journey__title journey__title--end">Mount it. Pick a module. Go live.</h2>
+        <p class="journey__subtitle">Most sites go from unboxing to first alert in under an hour. Adding a capability later is a software module — not a new install.</p>
+        <div class="journey__actions">
+          <a class="btn btn--solid" href="mailto:hello@sensordyme.com?subject=Product%20Purchase%20Inquiry">Purchase Product</a>
+          <a class="btn btn--ghost" href="technology.html">Read the deep dive</a>
+        </div>
+      </div>
+
+      <ol class="journey__rail" aria-hidden="true">
+        <li><button type="button" class="is-active">00</button></li>
+        <li><button type="button">01</button></li>
+        <li><button type="button">02</button></li>
+        <li><button type="button">03</button></li>
+        <li><button type="button">04</button></li>
+        <li><button type="button">05</button></li>
+      </ol>
+
+      <p class="journey__prompt" aria-hidden="true">Scroll to go inside</p>
+
+      <div class="journey__hud" aria-hidden="true">
+        <span class="journey__hud-item">Throughput <strong>25–30 FPS</strong></span>
+        <span class="journey__hud-item">Storage <strong>0 frames</strong></span>
+        <span class="journey__hud-item">Compute <strong>On-device</strong></span>
       </div>
     </div>
   </section>
@@ -502,6 +573,14 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script type="module" src="js/scene.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/journey.js"></script>
 </body>
 </html>
