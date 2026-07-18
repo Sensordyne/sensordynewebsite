@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SensorDyme AI Camera — Product</title>
+<meta name="description" content="Meet the SensorDyme AI Camera — real-time AI vision, custom detection rules, instant notifications, and a smart event timeline. $499.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="announce">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+    <span>Free shipping. 30-day returns. 1-year limited warranty.</span>
+  </div>
+  <div class="container nav__inner">
+    <a class="nav__logo" href="index.html" aria-label="SensorDyme home"><img src="assets/logo.svg" alt="SensorDyme"></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link is-active" href="product.html">Product</a>
+      <a class="nav__link" href="solutions.html">Solutions</a>
+      <a class="nav__link" href="index.html#how-it-works">How It Works</a>
+      <a class="nav__link" href="#technology">Technology</a>
+      <div class="dropdown">
+        <button class="nav__link" type="button" aria-haspopup="true" aria-expanded="false">Company
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html" role="menuitem">About</a>
+          <a href="mailto:hello@sensordyme.com" role="menuitem">Contact</a>
+          <span>Careers — coming soon</span>
+          <span>Press — coming soon</span>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__actions">
+      <button class="nav-search" id="navSearchField" type="button" aria-label="Search SensorDyme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search SensorDyme
+      </button>
+      <button class="icon-btn" id="searchOpen" aria-label="Search" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <div class="nav__lang-wrap">
+        <button class="icon-btn" id="langBtn" style="width:auto;padding:0 10px;border-radius:999px" aria-label="Choose language" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="nav__lang-label" id="langLabel">EN</span>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu"></div>
+      </div>
+      <a class="icon-btn" href="mailto:hello@sensordyme.com?subject=Account%20Access" aria-label="Account" title="Sign in — coming soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </a>
+      <button class="icon-btn" id="cartOpen" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h14l-1.5 9.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.7L5.2 4.6A2 2 0 0 0 3.3 3H2"/><circle cx="9.5" cy="21" r="1"/><circle cx="16.5" cy="21" r="1"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <div class="container nav__mobile-inner">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="product.html">Product</a>
+      <a class="nav__link" href="solutions.html">Solutions</a>
+      <a class="nav__link" href="index.html#how-it-works">How It Works</a>
+      <a class="nav__link" href="#technology">Technology</a>
+      <a class="nav__link" href="about.html">About</a>
+      <button class="btn btn--primary" data-add-to-cart>Add to Cart — $499</button>
+    </div>
+  </div>
+</header>
+
+<!-- Search overlay -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="icon-btn search-close" id="searchClose" aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="search-box">
+    <div class="search-box__field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="searchInput" placeholder="Search SensorDyme" autocomplete="off">
+    </div>
+    <p class="search-box__hint">Tip: press <kbd>Ctrl</kbd> + <kbd>K</kbd> anywhere to search, <kbd>Esc</kbd> to close.</p>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+  <div class="cart-drawer__head">
+    <h2>Your Cart</h2>
+    <button class="icon-btn" id="cartClose" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer__body" id="cartBody"></div>
+  <div class="cart-drawer__foot" id="cartFoot"></div>
+</aside>
+
+<main id="main">
+
+  <!-- Product hero -->
+  <section class="hero" style="min-height:86svh">
+    <span class="eyebrow">SensorDyme AI Camera</span>
+    <h1 class="hero__title">Cameras that&nbsp;think.</h1>
+    <p class="hero__sub">Real-time AI vision, custom detection rules, instant notifications, and a smart event timeline — in one matte graphite camera.</p>
+    <div class="hero__actions">
+      <button class="btn btn--primary btn--lg" data-add-to-cart>Buy Now — $499</button>
+      <a class="btn btn--outline btn--lg" href="solutions.html">See It in Action</a>
+    </div>
+
+    <div class="hero__stage">
+      <div class="hero__shadow" aria-hidden="true"></div>
+      <div class="hero__fallback" id="heroFallback" aria-hidden="true">
+        <svg viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of the SensorDyme AI camera">
+          <rect x="110" y="70" width="200" height="110" rx="18" fill="#2A2D33"/>
+          <rect x="110" y="70" width="200" height="110" rx="18" stroke="#44484F" stroke-width="1.5"/>
+          <circle cx="210" cy="125" r="34" fill="#17181C" stroke="#54585F" stroke-width="2"/>
+          <circle cx="210" cy="125" r="20" fill="#0B0C0F"/>
+          <circle cx="203" cy="117" r="6" fill="#3D4C66" opacity="0.9"/>
+          <circle cx="286" cy="86" r="4" fill="#22C55E"/>
+          <rect x="188" y="180" width="44" height="12" rx="4" fill="#2A2D33"/>
+          <rect x="196" y="192" width="28" height="30" rx="6" fill="#26292E"/>
+          <ellipse cx="210" cy="238" rx="90" ry="10" fill="#111111" opacity="0.08"/>
+        </svg>
+      </div>
+      <canvas class="hero__canvas" id="heroCanvas" hidden aria-hidden="true"></canvas>
+    </div>
+    <p class="specs-note" style="text-align:center">Interactive render shown. Final product photography of the production hardware is coming.</p>
+  </section>
+
+  <!-- Technology: hotspots -->
+  <section class="section section--alt" id="technology">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="eyebrow">Technology</span>
+        <h2 class="section-title">Every detail has a&nbsp;job.</h2>
+      </div>
+      <div class="hotspots" data-stagger>
+        <div class="hotspot fade-up"><strong><i></i> Wide-Angle Lens</strong><p>Sees the whole room, aisle, or driveway — the input for everything the AI understands.</p></div>
+        <div class="hotspot fade-up"><strong><i></i> AI Processor</strong><p>Runs detection where the camera is, so events are recognized in moments.</p></div>
+        <div class="hotspot fade-up"><strong><i></i> Status LEDs</strong><p>A glance tells you the camera is online, watching, or has something to report.</p></div>
+        <div class="hotspot fade-up"><strong><i></i> Controls</strong><p>Simple physical controls for setup and privacy — no manual required.</p></div>
+        <div class="hotspot fade-up"><strong><i></i> Microphone</strong><p>Audio awareness to complement vision, with future two-way audio planned.</p></div>
+        <div class="hotspot fade-up"><strong><i></i> Flexible Mount</strong><p>Desk, wall, or tripod — position it wherever the view is best.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prompt builder -->
+  <section class="section" id="prompts">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="eyebrow">Custom Rules</span>
+        <h2 class="section-title">Tell SensorDyme what&nbsp;matters.</h2>
+        <p class="section-sub">Describe what you want to know about in plain language. SensorDyme turns it into a detection rule.</p>
+      </div>
+      <div class="prompt-demo fade-up">
+        <form class="prompt-demo__field" id="promptForm">
+          <span class="prompt-prefix">Notify me when…</span>
+          <input type="text" id="promptInput" placeholder="a package arrives" aria-label="Describe a detection rule">
+          <button class="btn btn--primary btn--sm" type="submit">Create Rule</button>
+        </form>
+        <div class="prompt-demo__examples" id="promptExamples">
+          <button type="button" class="prompt-chip">My dog leaves the yard</button>
+          <button type="button" class="prompt-chip">A package arrives</button>
+          <button type="button" class="prompt-chip">Someone enters the backyard</button>
+          <button type="button" class="prompt-chip">A child approaches the pool</button>
+          <button type="button" class="prompt-chip">An elderly family member falls</button>
+          <button type="button" class="prompt-chip">A vehicle blocks the driveway</button>
+        </div>
+        <div class="prompt-demo__result hero-notif" id="promptResult" aria-live="polite">
+          <div class="hero-notif__app"><img src="assets/logo-mark.svg" alt=""> SensorDyme · Rule Active</div>
+          <strong id="promptResultTitle">Package Arrives</strong>
+          <span>You’ll be notified the moment this happens.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="section section--alt" id="specs">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Technical Specifications</span>
+        <h2 class="section-title">Under the hood.</h2>
+      </div>
+      <dl class="specs fade-up">
+        <div class="spec"><dt>Resolution</dt><dd>4K UHD <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>AI Processing</dt><dd>On-device accelerator <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Field of View</dt><dd>~120° wide <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Connectivity</dt><dd>Wi-Fi · Ethernet <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Night Vision</dt><dd>IR-ready <small>planned</small></dd></div>
+        <div class="spec"><dt>Power</dt><dd>USB-C <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Storage</dt><dd>Local + optional cloud <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Operating Temp</dt><dd>TBD <small>placeholder — final spec TBD</small></dd></div>
+        <div class="spec"><dt>Finish</dt><dd>Matte Graphite <small>additional colors under consideration</small></dd></div>
+      </dl>
+      <p class="specs-note fade-up">Specifications shown are placeholders and will be finalized before launch.</p>
+    </div>
+  </section>
+
+  <!-- In the box + pricing -->
+  <section class="section" id="buy">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">What's in the Box</span>
+        <h2 class="section-title">Everything you need to go&nbsp;live.</h2>
+        <div class="box-list">
+          <span>SensorDyme AI Camera</span>
+          <span>Mount &amp; hardware</span>
+          <span>USB-C power cable</span>
+          <span>Quick Start Guide</span>
+        </div>
+        <p class="section-sub">Set up in minutes: mount the camera, connect the app, and tell it what matters. A free plan covers core monitoring; optional premium subscriptions for advanced AI features, additional cameras, and cloud storage will be managed in the mobile app.</p>
+      </div>
+      <div class="fade-up">
+        <div class="pricing-card" style="margin:0">
+          <h3>SensorDyme AI Camera</h3>
+          <div class="price">$499</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Real-time AI detection &amp; custom rules</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Mobile app with live view &amp; timeline</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Instant notifications</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Standard warranty</li>
+          </ul>
+          <button class="btn btn--primary btn--lg" data-add-to-cart>Add to Cart</button>
+          <p class="pricing-foot">Orders are confirmed directly with our team while online checkout is being finalized.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section-header section-header--center fade-up">
+        <span class="eyebrow">Support</span>
+        <h2 class="section-title">Frequently Asked Questions.</h2>
+      </div>
+      <div class="faq fade-up" id="faqList">
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>What is SensorDyme?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>SensorDyme is an AI-powered camera that understands its environment in real time. Instead of just recording video, it recognizes meaningful events — people, vehicles, pets, packages, falls — and notifies you when conditions you define occur.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>How does AI detection work?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>The camera analyzes what it sees frame by frame, identifies objects and situations, matches them against your rules, and sends a notification when a rule is triggered. Events are saved to a smart timeline so you can review key moments quickly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>Can I create my own rules?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>Yes. Custom prompt-based rules are central to SensorDyme — describe what matters to you (“notify me when a package arrives”) and the system watches for exactly that.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>How is my data protected?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>SensorDyme is designed with privacy in mind, supporting privacy-conscious local processing options alongside cloud-connected features. You stay in control of what is detected, stored, and shared.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>Does it work indoors and outdoors?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>SensorDyme is designed for a wide range of environments — homes, offices, schools, warehouses, construction sites, and farms. Final environmental ratings will be published with the finalized hardware specifications.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>Is there a subscription?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>The camera works out of the box with a free plan for core monitoring. Optional premium subscriptions — advanced AI detection, additional cameras, cloud storage, and business features — will be managed through the mobile app initially.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" aria-expanded="false"><span>How do I order?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="faq-item__body"><p>Add the camera to your cart and submit an order inquiry — our team confirms availability, shipping, and payment with you directly. Full online checkout is coming soon.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer2">
+  <div class="container">
+    <div class="footer2__main">
+      <div class="footer2__brand">
+        <img src="assets/logo.svg" alt="SensorDyme">
+        <p>The camera that detects and protects. Smarter AI. Safer world.</p>
+        <div class="footer2__social">
+          <a href="https://www.instagram.com/sensordyme/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591910370340" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l-.5 3H14v9h-3.5v-9H8V9h2.5V7.3C10.5 4.9 11.9 3.5 14.2 3.5c1 0 2 .1 2.3.2v2.8H15c-1 0-1 .5-1 1.3V9z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube (coming soon)" title="Coming soon" onclick="return false">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.5a2.8 2.8 0 0 0-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.5a2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.7.5-5.5.5-5.5zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer2__cta">
+        <h3>Ready to protect what matters most?</h3>
+        <p>Join the families and businesses using SensorDyme.</p>
+        <button class="btn btn--dark" data-add-to-cart>Add to Cart — $499</button>
+      </div>
+      <div class="perks">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg> Free Shipping</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg> 30-Day Returns</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-1.5 7L12 18.5 16.5 21 15 14"/></svg> 1-Year Warranty</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Checkout</div>
+      </div>
+    </div>
+    <div class="footer2__bottom">
+      <span>&copy; 2026 SensorDyme. All rights reserved. &nbsp;·&nbsp; Charlotte, NC &nbsp;·&nbsp; <a href="mailto:hello@sensordyme.com" style="text-decoration:underline">hello@sensordyme.com</a></span>
+      <div class="footer2__selects">
+        <select id="footerLang" aria-label="Language"></select>
+        <select aria-label="Currency"><option>USD $</option></select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/hero3d.js"></script>
+</body>
+</html>

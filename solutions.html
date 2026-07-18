@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions — SensorDyme</title>
+<meta name="description" content="See how SensorDyme brings intelligent AI monitoring to homes, families, businesses, schools, warehouses, construction sites, farms, healthcare, retail, and public spaces.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="announce">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+    <span>Free shipping. 30-day returns. 1-year limited warranty.</span>
+  </div>
+  <div class="container nav__inner">
+    <a class="nav__logo" href="index.html" aria-label="SensorDyme home"><img src="assets/logo.svg" alt="SensorDyme"></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="product.html">Product</a>
+      <a class="nav__link is-active" href="solutions.html">Solutions</a>
+      <a class="nav__link" href="index.html#how-it-works">How It Works</a>
+      <a class="nav__link" href="product.html#technology">Technology</a>
+      <div class="dropdown">
+        <button class="nav__link" type="button" aria-haspopup="true" aria-expanded="false">Company
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown__menu" role="menu">
+          <a href="about.html" role="menuitem">About</a>
+          <a href="mailto:hello@sensordyme.com" role="menuitem">Contact</a>
+          <span>Careers — coming soon</span>
+          <span>Press — coming soon</span>
+        </div>
+      </div>
+    </nav>
+    <div class="nav__actions">
+      <button class="nav-search" id="navSearchField" type="button" aria-label="Search SensorDyme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search SensorDyme
+      </button>
+      <button class="icon-btn" id="searchOpen" aria-label="Search" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <div class="nav__lang-wrap">
+        <button class="icon-btn" id="langBtn" style="width:auto;padding:0 10px;border-radius:999px" aria-label="Choose language" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="nav__lang-label" id="langLabel">EN</span>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu"></div>
+      </div>
+      <a class="icon-btn" href="mailto:hello@sensordyme.com?subject=Account%20Access" aria-label="Account" title="Sign in — coming soon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </a>
+      <button class="icon-btn" id="cartOpen" aria-label="Shopping cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h14l-1.5 9.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.7L5.2 4.6A2 2 0 0 0 3.3 3H2"/><circle cx="9.5" cy="21" r="1"/><circle cx="16.5" cy="21" r="1"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="navMobile" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <div class="container nav__mobile-inner">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="product.html">Product</a>
+      <a class="nav__link" href="solutions.html">Solutions</a>
+      <a class="nav__link" href="index.html#how-it-works">How It Works</a>
+      <a class="nav__link" href="product.html#technology">Technology</a>
+      <a class="nav__link" href="about.html">About</a>
+      <button class="btn btn--primary" data-add-to-cart>Add to Cart — $499</button>
+    </div>
+  </div>
+</header>
+
+<!-- Search overlay -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="icon-btn search-close" id="searchClose" aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <div class="search-box">
+    <div class="search-box__field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="searchInput" placeholder="Search SensorDyme" autocomplete="off">
+    </div>
+    <p class="search-box__hint">Tip: press <kbd>Ctrl</kbd> + <kbd>K</kbd> anywhere to search, <kbd>Esc</kbd> to close.</p>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+  <div class="cart-drawer__head">
+    <h2>Your Cart</h2>
+    <button class="icon-btn" id="cartClose" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer__body" id="cartBody"></div>
+  <div class="cart-drawer__foot" id="cartFoot"></div>
+</aside>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Solutions</span>
+      <h1 class="display">One camera. Every&nbsp;environment.</h1>
+      <p class="section-sub" style="margin-inline:auto">From nurseries to job sites, SensorDyme adapts its intelligence to the place you need to protect. Find yourself in one of the scenarios below.</p>
+    </div>
+  </section>
+
+  <nav class="anchor-nav" aria-label="Use cases">
+    <div class="container anchor-nav__inner">
+      <a href="#home">Home</a><a href="#baby">Baby</a><a href="#elderly">Elderly Care</a><a href="#driving">Teen Driving</a><a href="#pets">Pets</a><a href="#education">Education</a><a href="#business">Business</a><a href="#warehouse">Warehouse</a><a href="#construction">Construction</a><a href="#agriculture">Agriculture</a><a href="#healthcare">Healthcare</a><a href="#retail">Retail</a><a href="#government">Public Spaces</a>
+    </div>
+  </nav>
+
+  <!-- Home Security -->
+  <section class="section usecase" id="home">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Home Security</span>
+        <h2 class="section-title">Your home, aware of&nbsp;itself.</h2>
+        <p class="section-sub">Most home cameras tell you what happened after it's over. SensorDyme watches the driveway, the porch, and the backyard — and tells you the moment something meaningful happens.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Know when packages arrive — and when they leave</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Detect people and vehicles entering the property</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Nighttime activity alerts without false alarms</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Person Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Package Delivered</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Vehicle Arrived</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="product.html">Learn More</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M80 130 200 55l120 75" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M100 122v110h200V122" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <rect x="172" y="168" width="56" height="64" rx="3" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="188" y="88" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="201" cy="95" r="4" fill="#2563EB"/>
+            <path d="M201 103 160 145M201 103l41 42" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+            <rect x="288" y="200" width="34" height="26" rx="3" stroke="#D9D9D9" stroke-width="2"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:12%;right:8%"><span class="ai-chip__dot"></span> Home Protected</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baby Monitoring -->
+  <section class="section section--alt usecase" id="baby">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Baby Monitoring</span>
+        <h2 class="section-title">Peace of mind in the&nbsp;nursery.</h2>
+        <p class="section-sub">SensorDyme goes beyond a video feed. It understands when your baby wakes, moves into an area they shouldn't, or approaches a safety zone like a pool — and tells you right away.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Alerts when your baby wakes or leaves the crib area</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Safety-zone monitoring around pools and stairs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Cry detection on the roadmap</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Child Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Pool Zone Entered</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Motion Detected</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="product.html">Learn More</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <rect x="120" y="130" width="160" height="90" rx="8" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M132 130v-24M268 130v-24M132 220v22M268 220v22" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M140 150h120M140 170h120M140 190h120" stroke="#ECECEC" stroke-width="2"/>
+            <circle cx="200" cy="112" r="16" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="304" y="70" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="317" cy="77" r="4" fill="#2563EB"/>
+            <path d="M310 85l-70 45" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+          </svg>
+          <span class="scene-ph__chip" style="bottom:12%;left:10%"><span class="ai-chip__dot"></span> Baby Sleeping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elderly Care -->
+  <section class="section usecase" id="elderly">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Elderly Care</span>
+        <h2 class="section-title">Independence, with someone&nbsp;watching&nbsp;over.</h2>
+        <p class="section-sub">For aging family members living on their own, SensorDyme recognizes falls and unusual periods of inactivity, so help can be on the way in moments — not hours.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Fall detection with immediate family notification</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Alerts after unusually long inactivity</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Dignified monitoring — events, not surveillance</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#EF4444"></span> Fall Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Assistance May Be Needed</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="product.html">Learn More</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <circle cx="185" cy="105" r="16" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M185 121v52m0 0-22 46m22-46 20 46M185 140l-28 18m28-18 30 14" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M230 154c10-2 16-10 16-22" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M100 232h200" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <rect x="296" y="64" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="309" cy="71" r="4" fill="#2563EB"/>
+            <path d="M302 79l-80 60" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:14%;left:8%"><span class="ai-chip__dot"></span> Moving Normally</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teen Driving -->
+  <section class="section section--alt usecase" id="driving">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Teen Driving</span>
+        <h2 class="section-title">Safer habits behind the&nbsp;wheel.</h2>
+        <p class="section-sub">Mounted in the vehicle, SensorDyme recognizes distracted driving as it happens — eyes off the road, attention on a phone — and helps young drivers build safer habits.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Detects phone use and eyes-off-road moments</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Real-time awareness for parents</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Seatbelt detection on the roadmap</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Driver Distracted</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Eyes Off Road</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="product.html">Learn More</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M90 190c0-16 14-46 34-46h152c20 0 34 30 34 46" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M78 190h244v26a8 8 0 0 1-8 8H86a8 8 0 0 1-8-8v-26z" stroke="#D9D9D9" stroke-width="2"/>
+            <circle cx="130" cy="228" r="16" stroke="#D9D9D9" stroke-width="2"/>
+            <circle cx="270" cy="228" r="16" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M140 144l16-24h88l16 24" stroke="#ECECEC" stroke-width="2"/>
+            <rect x="188" y="96" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="201" cy="103" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:12%;right:10%"><span class="ai-chip__dot"></span> Attention on Road</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pet Monitoring -->
+  <section class="section usecase" id="pets">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Pet Monitoring</span>
+        <h2 class="section-title">Know what they're up&nbsp;to.</h2>
+        <p class="section-sub">Check in on your pets from anywhere — and let SensorDyme tell you when the dog leaves the yard, hops on the couch, or when it's feeding time.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Alerts when pets leave zones you define</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Furniture and room rules ("dog on couch")</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Activity overview while you're away</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Pet Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Dog Left Yard</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="product.html">Learn More</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M70 220h260" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <path d="M96 220v-70m40 70v-70m40 70v-70m40 70v-70m40 70v-70m40 70v-70M84 150h240" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <path d="M170 220c0-18 10-32 26-32s26 14 26 32" stroke="#D9D9D9" stroke-width="2"/>
+            <circle cx="212" cy="182" r="10" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="286" y="92" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="299" cy="99" r="4" fill="#2563EB"/>
+            <path d="M292 107l-64 70" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:14%;left:8%"><span class="ai-chip__dot"></span> Pet in Yard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section section--alt usecase" id="education">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Education &amp; Test Proctoring</span>
+        <h2 class="section-title">Intelligent awareness for&nbsp;campuses.</h2>
+        <p class="section-sub">From classrooms to exam halls, SensorDyme supports AI-assisted monitoring that helps staff stay aware without watching hours of footage.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Exam session monitoring with event summaries</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Campus safety awareness across shared spaces</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted device detection on the roadmap</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Student Present</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Exam Session Active</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Education%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <rect x="90" y="150" width="70" height="44" rx="4" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="240" y="150" width="70" height="44" rx="4" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="165" y="150" width="70" height="44" rx="4" stroke="#ECECEC" stroke-width="2"/>
+            <path d="M100 194v30m50-30v30m65-30v30m50-30v30m35-30v30" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <rect x="120" y="70" width="160" height="8" rx="4" fill="#ECECEC"/>
+            <rect x="187" y="98" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="200" cy="105" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="bottom:10%;right:8%"><span class="ai-chip__dot"></span> Session Active</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="section usecase" id="business">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Business &amp; Enterprise</span>
+        <h2 class="section-title">Operational awareness,&nbsp;built&nbsp;in.</h2>
+        <p class="section-sub">Security, customer traffic, after-hours monitoring, asset protection — SensorDyme gives business owners meaningful events instead of a wall of monitors. Multi-camera fleet tools and enterprise features are on the roadmap.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> After-hours entry and activity alerts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Visitor and employee arrival awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Asset and restricted-area protection</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Employee Entered</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Visitor Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Business Closed</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Enterprise%20Inquiry">Contact Sales</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <rect x="120" y="80" width="160" height="150" rx="4" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M145 108h30v24h-30zM185 108h30v24h-30zM225 108h30v24h-30zM145 148h30v24h-30zM185 148h30v24h-30zM225 148h30v24h-30z" stroke="#ECECEC" stroke-width="2"/>
+            <rect x="182" y="198" width="36" height="32" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="292" y="70" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="305" cy="77" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:12%;left:8%"><span class="ai-chip__dot"></span> Office Secure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warehouse -->
+  <section class="section section--alt usecase" id="warehouse">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Warehousing</span>
+        <h2 class="section-title">Eyes on every&nbsp;aisle.</h2>
+        <p class="section-sub">Loading docks, forklift routes, restricted areas, inventory zones — SensorDyme keeps track of movement across the floor and flags what needs attention.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Forklift and equipment movement awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Loading-dock activity events</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-area entry alerts</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Forklift Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Loading Dock Activity</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Warehouse%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M90 100h220v130H90z" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M110 230v-40h40v40M170 230v-64h40v64M230 230v-48h40v48" stroke="#ECECEC" stroke-width="2"/>
+            <path d="M90 130h220" stroke="#ECECEC" stroke-width="2"/>
+            <rect x="187" y="76" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="200" cy="83" r="4" fill="#2563EB"/>
+            <path d="M200 91v24" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+          </svg>
+          <span class="scene-ph__chip" style="bottom:12%;right:8%"><span class="ai-chip__dot"></span> Aisle Clear</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Construction -->
+  <section class="section usecase" id="construction">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Construction</span>
+        <h2 class="section-title">A safer job&nbsp;site.</h2>
+        <p class="section-sub">Restricted zones, moving equipment, worker safety — SensorDyme watches the site so incidents are flagged in the moment, not discovered in a report.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-zone entry alerts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Equipment movement and after-hours activity</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> PPE detection on the roadmap</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Worker Entered Zone</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Equipment Moving</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Construction%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M100 230h200" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <path d="M130 230V120l60-40v150M190 230V80h80v150" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M206 104h48M206 128h48M206 152h48M206 176h48" stroke="#ECECEC" stroke-width="2"/>
+            <path d="M300 90l40 26" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <rect x="90" y="70" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="103" cy="77" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:14%;right:8%"><span class="ai-chip__dot"></span> Site Monitored</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agriculture -->
+  <section class="section section--alt usecase" id="agriculture">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Agriculture</span>
+        <h2 class="section-title">Watch the whole&nbsp;farm.</h2>
+        <p class="section-sub">Livestock, barns, equipment, and gates — SensorDyme keeps watch over the property and lets you know when animals move, vehicles arrive, or something's out of place.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Livestock presence and movement awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Equipment and barn security</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Vehicle arrival alerts at gates and drives</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Livestock Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Vehicle Entered Farm</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Agriculture%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M120 220v-70l60-38 60 38v70" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M120 220h120M162 220v-42h36v42" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M80 220h240" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <path d="M270 220v-26m24 26v-26m24 26v-26m-48 8h48" stroke="#ECECEC" stroke-width="2" stroke-linecap="round"/>
+            <rect x="284" y="120" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="297" cy="127" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:14%;left:10%"><span class="ai-chip__dot"></span> Barn Secure</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Healthcare -->
+  <section class="section usecase" id="healthcare">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Healthcare</span>
+        <h2 class="section-title">Faster response when it&nbsp;counts.</h2>
+        <p class="section-sub">In hospitals and care facilities, minutes matter. SensorDyme recognizes patient falls and restricted-area access, helping staff respond immediately.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Patient fall detection with instant alerts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Hallway and common-area awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-area access monitoring</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#EF4444"></span> Patient Fall Detected</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Restricted Area Access</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Healthcare%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <rect x="110" y="150" width="140" height="60" rx="6" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M110 210v22m140-22v22M110 176h140" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="140" cy="163" r="8" stroke="#ECECEC" stroke-width="2"/>
+            <path d="M290 120h28m-14-14v28" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="180" y="84" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="193" cy="91" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="bottom:12%;right:8%"><span class="ai-chip__dot"></span> Room 12 · Normal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retail -->
+  <section class="section section--alt usecase" id="retail">
+    <div class="container split split--reverse">
+      <div class="fade-up">
+        <span class="eyebrow">Retail</span>
+        <h2 class="section-title">Understand your store.</h2>
+        <p class="section-sub">Entrances, checkouts, stockrooms — SensorDyme tracks meaningful activity across the store, from customer arrivals to after-close movement.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Customer entrance and traffic awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Theft-deterrent activity alerts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> After-hours monitoring when the store closes</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Customer Entered</span>
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Store Closing</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Retail%20Inquiry">Talk to Us</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <rect x="110" y="110" width="180" height="120" rx="4" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M100 110h200l-14-30H114l-14 30z" stroke="#D9D9D9" stroke-width="2"/>
+            <rect x="178" y="170" width="44" height="60" stroke="#ECECEC" stroke-width="2"/>
+            <path d="M130 140h40v20h-40zM230 140h40v20h-40z" stroke="#ECECEC" stroke-width="2"/>
+            <rect x="306" y="88" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="319" cy="95" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:12%;left:8%"><span class="ai-chip__dot"></span> Store Open</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Government -->
+  <section class="section usecase" id="government">
+    <div class="container split">
+      <div class="fade-up">
+        <span class="eyebrow">Government &amp; Public Spaces</span>
+        <h2 class="section-title">Awareness for the places everyone&nbsp;shares.</h2>
+        <p class="section-sub">Public buildings, parking lots, and municipal facilities benefit from intelligent monitoring that surfaces meaningful events — unauthorized access, arriving vehicles — without staff watching screens all day.</p>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Building and facility access awareness</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Parking lot vehicle detection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Municipal monitoring with event timelines</li>
+        </ul>
+        <div class="usecase__chips" aria-hidden="true">
+          <span class="ai-chip"><span class="ai-chip__dot" style="background:#F59E0B"></span> Unauthorized Access</span>
+          <span class="ai-chip"><span class="ai-chip__dot"></span> Vehicle Detected</span>
+        </div>
+        <div class="split__actions">
+          <a class="btn btn--primary" href="mailto:hello@sensordyme.com?subject=Public%20Sector%20Inquiry">Contact Sales</a>
+          <button class="btn btn--outline" data-add-to-cart>Buy Now</button>
+        </div>
+      </div>
+      <div class="split__media fade-up">
+        <div class="scene-ph">
+          <svg viewBox="0 0 400 280" fill="none" aria-hidden="true">
+            <path d="M110 230h180M120 230V140h160v90" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M110 140h180l-90-46-90 46z" stroke="#D9D9D9" stroke-width="2"/>
+            <path d="M146 230v-60m36 60v-60m36 60v-60m36 60v-60" stroke="#ECECEC" stroke-width="2"/>
+            <rect x="306" y="100" width="26" height="15" rx="4" fill="#2A2D33"/>
+            <circle cx="319" cy="107" r="4" fill="#2563EB"/>
+          </svg>
+          <span class="scene-ph__chip" style="top:12%;left:8%"><span class="ai-chip__dot"></span> Facility Monitored</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="fade-up">How would SensorDyme improve your&nbsp;day?</h2>
+      <p class="fade-up">Whatever you protect — a family, a business, a site — SensorDyme is built to understand it.</p>
+      <div class="final-cta__actions fade-up">
+        <button class="btn btn--primary btn--lg" data-add-to-cart>Buy Now</button>
+        <a class="btn btn--outline btn--lg" href="mailto:hello@sensordyme.com?subject=Demo%20Request">Schedule a Demo</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer2">
+  <div class="container">
+    <div class="footer2__main">
+      <div class="footer2__brand">
+        <img src="assets/logo.svg" alt="SensorDyme">
+        <p>The camera that detects and protects. Smarter AI. Safer world.</p>
+        <div class="footer2__social">
+          <a href="https://www.instagram.com/sensordyme/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61591910370340" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l-.5 3H14v9h-3.5v-9H8V9h2.5V7.3C10.5 4.9 11.9 3.5 14.2 3.5c1 0 2 .1 2.3.2v2.8H15c-1 0-1 .5-1 1.3V9z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube (coming soon)" title="Coming soon" onclick="return false">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.5a2.8 2.8 0 0 0-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2C1 8.2 1 12 1 12s0 3.8.5 5.5a2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2c.5-1.7.5-5.5.5-5.5zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer2__cta">
+        <h3>Ready to protect what matters most?</h3>
+        <p>Join the families and businesses using SensorDyme.</p>
+        <button class="btn btn--dark" data-add-to-cart>Add to Cart — $499</button>
+      </div>
+      <div class="perks">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg> Free Shipping</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg> 30-Day Returns</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-1.5 7L12 18.5 16.5 21 15 14"/></svg> 1-Year Warranty</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Checkout</div>
+      </div>
+    </div>
+    <div class="footer2__bottom">
+      <span>&copy; 2026 SensorDyme. All rights reserved. &nbsp;·&nbsp; Charlotte, NC &nbsp;·&nbsp; <a href="mailto:hello@sensordyme.com" style="text-decoration:underline">hello@sensordyme.com</a></span>
+      <div class="footer2__selects">
+        <select id="footerLang" aria-label="Language"></select>
+        <select aria-label="Currency"><option>USD $</option></select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
