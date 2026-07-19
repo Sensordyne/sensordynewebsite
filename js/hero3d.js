@@ -21,76 +21,82 @@ function supportsWebGL() {
   }
 }
 
+/**
+ * Modeled on the official SensorDyme hardware photos: a wide, softly rounded
+ * matte-graphite body with a dark pill-shaped lens recess, a row of mic
+ * holes above it, and a thin light bar below it. Sits flat (no stand).
+ */
 function buildCamera() {
   const group = new THREE.Group();
 
-  const graphite = new THREE.MeshStandardMaterial({ color: 0x2e3138, roughness: 0.5, metalness: 0.35 });
-  const darkFace = new THREE.MeshStandardMaterial({ color: 0x1b1d22, roughness: 0.35, metalness: 0.4 });
+  const graphite = new THREE.MeshStandardMaterial({ color: 0x3a3d43, roughness: 0.55, metalness: 0.25 });
+  const recess = new THREE.MeshStandardMaterial({ color: 0x1b1d21, roughness: 0.4, metalness: 0.3 });
   const glass = new THREE.MeshPhysicalMaterial({
-    color: 0x0a0c12, roughness: 0.08, metalness: 0.1,
+    color: 0x07080b, roughness: 0.08, metalness: 0.1,
     clearcoat: 1, clearcoatRoughness: 0.06,
   });
-  const ring = new THREE.MeshStandardMaterial({ color: 0x53565c, roughness: 0.25, metalness: 0.85 });
 
-  // Body
-  const body = new THREE.Mesh(new RoundedBoxGeometry(2.6, 1.5, 1.0, 5, 0.18), graphite);
+  // Body — wide and softly rounded like the official unit
+  const body = new THREE.Mesh(new RoundedBoxGeometry(2.7, 1.35, 1.05, 6, 0.3), graphite);
   group.add(body);
 
-  // Front faceplate
-  const face = new THREE.Mesh(new RoundedBoxGeometry(2.3, 1.24, 0.14, 4, 0.1), darkFace);
-  face.position.z = 0.48;
-  group.add(face);
+  // Pill-shaped front recess (extruded capsule outline)
+  const pillShape = new THREE.Shape();
+  const pw = 0.72, ph = 0.36; // half-width / half-height of the pill
+  pillShape.absarc(-pw + ph, 0, ph, Math.PI / 2, Math.PI * 1.5, false);
+  pillShape.lineTo(pw - ph, -ph);
+  pillShape.absarc(pw - ph, 0, ph, Math.PI * 1.5, Math.PI / 2, false);
+  pillShape.lineTo(-pw + ph, ph);
+  const pill = new THREE.Mesh(
+    new THREE.ExtrudeGeometry(pillShape, { depth: 0.08, bevelEnabled: true, bevelSize: 0.03, bevelThickness: 0.03, bevelSegments: 3, curveSegments: 32 }),
+    recess
+  );
+  pill.position.set(0, 0.02, 0.47);
+  group.add(pill);
 
-  // Lens ring + barrel + glass
-  const lensRing = new THREE.Mesh(new THREE.CylinderGeometry(0.56, 0.56, 0.14, 48), ring);
+  // Lens: dark ring + glass dome + inner element
+  const lensRing = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.06, 48), recess);
   lensRing.rotation.x = Math.PI / 2;
-  lensRing.position.z = 0.6;
+  lensRing.position.set(0, 0.02, 0.58);
   group.add(lensRing);
 
-  const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.46, 0.46, 0.22, 48), darkFace);
-  barrel.rotation.x = Math.PI / 2;
-  barrel.position.z = 0.68;
-  group.add(barrel);
-
-  const lens = new THREE.Mesh(new THREE.SphereGeometry(0.4, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2.4), glass);
+  const lens = new THREE.Mesh(new THREE.SphereGeometry(0.26, 48, 32, 0, Math.PI * 2, 0, Math.PI / 2.4), glass);
   lens.rotation.x = Math.PI / 2;
-  lens.position.z = 0.7;
-  lens.scale.z = 0.55;
+  lens.position.set(0, 0.02, 0.58);
+  lens.scale.z = 0.5;
   group.add(lens);
 
-  // Inner lens element catches light
   const innerLens = new THREE.Mesh(
-    new THREE.CircleGeometry(0.16, 32),
-    new THREE.MeshStandardMaterial({ color: 0x27406e, roughness: 0.15, metalness: 0.6 })
+    new THREE.CircleGeometry(0.11, 32),
+    new THREE.MeshStandardMaterial({ color: 0x233a63, roughness: 0.15, metalness: 0.6 })
   );
-  innerLens.position.z = 0.82;
+  innerLens.position.set(0, 0.02, 0.66);
   group.add(innerLens);
 
-  // Status LED
-  const led = new THREE.Mesh(
-    new THREE.SphereGeometry(0.045, 16, 16),
-    new THREE.MeshStandardMaterial({ color: 0x22c55e, emissive: 0x22c55e, emissiveIntensity: 1.6 })
-  );
-  led.position.set(1.02, 0.5, 0.56);
-  group.add(led);
-
-  // Microphone dots
-  const micMat = new THREE.MeshStandardMaterial({ color: 0x0e0f12, roughness: 0.6 });
-  for (let i = 0; i < 3; i++) {
-    const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.03, 12), micMat);
+  // Mic holes above the recess
+  const micMat = new THREE.MeshStandardMaterial({ color: 0x101216, roughness: 0.6 });
+  for (let i = 0; i < 5; i++) {
+    const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.03, 12), micMat);
     dot.rotation.x = Math.PI / 2;
-    dot.position.set(-1.0 + i * 0.12, -0.5, 0.56);
+    dot.position.set(-0.28 + i * 0.14, 0.5, 0.52);
     group.add(dot);
   }
 
-  // Mount stem + base
-  const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.11, 0.5, 24), ring);
-  stem.position.y = -0.98;
-  group.add(stem);
+  // Small side dots (sensors) at the outer edges
+  [-1.02, 1.02].forEach((x) => {
+    const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.03, 16), micMat);
+    dot.rotation.x = Math.PI / 2;
+    dot.position.set(x, 0.28, 0.5);
+    group.add(dot);
+  });
 
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.62, 0.1, 40), graphite);
-  base.position.y = -1.26;
-  group.add(base);
+  // Thin light bar below the recess
+  const bar = new THREE.Mesh(
+    new RoundedBoxGeometry(0.42, 0.045, 0.03, 2, 0.02),
+    new THREE.MeshStandardMaterial({ color: 0xb9bec6, emissive: 0x9aa3ad, emissiveIntensity: 0.35, roughness: 0.35 })
+  );
+  bar.position.set(0, -0.52, 0.52);
+  group.add(bar);
 
   return group;
 }

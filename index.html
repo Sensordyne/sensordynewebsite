@@ -38,13 +38,11 @@
 <!-- Navigation -->
 <header class="nav" id="nav">
   <div class="announce">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
-    <span>Free shipping. 30-day returns. 1-year limited warranty.</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+    <span>30-day returns. 1-year limited warranty.</span>
   </div>
   <div class="container nav__inner">
-    <a class="nav__logo" href="index.html" aria-label="SensorDyme home">
-      <img src="assets/logo.svg" alt="SensorDyme">
-    </a>
+    <a class="nav__logo" href="index.html" aria-label="SensorDyme home"><img src="assets/logo-mark.svg" alt=""><span class="wordmark">SensorDyme</span></a>
 
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link is-active" href="index.html">Home</a>
@@ -168,14 +166,14 @@
         <div class="hero-visual__stage">
           <div class="hero__fallback" id="heroFallback" aria-hidden="true">
             <svg viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The SensorDyme AI camera">
-              <rect x="110" y="70" width="200" height="110" rx="20" fill="#2A2D33"/>
-              <rect x="110" y="70" width="200" height="110" rx="20" stroke="#44484F" stroke-width="1.5"/>
-              <circle cx="150" cy="84" r="2.5" fill="#17181C"/><circle cx="165" cy="84" r="2.5" fill="#17181C"/><circle cx="180" cy="84" r="2.5" fill="#17181C"/><circle cx="195" cy="84" r="2.5" fill="#17181C"/>
-              <circle cx="210" cy="128" r="34" fill="#17181C" stroke="#54585F" stroke-width="2"/>
-              <circle cx="210" cy="128" r="20" fill="#0B0C0F"/>
-              <circle cx="203" cy="120" r="6" fill="#3D4C66" opacity="0.9"/>
-              <circle cx="286" cy="88" r="4" fill="#22C55E"/>
-              <rect x="192" y="180" width="36" height="8" rx="3" fill="#26292E"/>
+              <ellipse cx="210" cy="234" rx="112" ry="10" fill="#111111" opacity="0.08"/>
+              <rect x="92" y="62" width="236" height="122" rx="52" fill="#3A3D43" stroke="#4C4F56" stroke-width="1.5"/>
+              <circle cx="182" cy="92" r="3" fill="#1A1C20"/><circle cx="196" cy="92" r="3" fill="#1A1C20"/><circle cx="210" cy="92" r="3" fill="#1A1C20"/><circle cx="224" cy="92" r="3" fill="#1A1C20"/><circle cx="238" cy="92" r="3" fill="#1A1C20"/>
+              <circle cx="126" cy="98" r="4.5" fill="#1A1C20"/><circle cx="294" cy="98" r="4.5" fill="#1A1C20"/>
+              <rect x="150" y="104" width="120" height="52" rx="26" fill="#17181C"/>
+              <circle cx="210" cy="130" r="18" fill="#0B0C0F" stroke="#2A2D33" stroke-width="2"/>
+              <circle cx="205" cy="124" r="5.5" fill="#2E4468" opacity="0.9"/>
+              <rect x="192" y="164" width="36" height="5.5" rx="2.75" fill="#A9AEB6"/>
             </svg>
           </div>
           <canvas class="hero__canvas" id="heroCanvas" hidden aria-hidden="true"></canvas>
@@ -192,14 +190,11 @@
   <section class="trust-strip" aria-label="Who SensorDyme is built for">
     <div class="container">
       <p class="trust-strip__label">Trusted by Families and Businesses</p>
-      <!-- Placeholder audience wordmarks — swap for real press/partner logos once earned -->
-      <div class="trust-logos" aria-hidden="true">
-        <span>Families</span>
-        <span>Small Business</span>
-        <span>Schools</span>
-        <span>Care Facilities</span>
-        <span>Construction</span>
-        <span>Retail</span>
+      <div class="trust-feats">
+        <div><strong>Real-Time Detection</strong><p>AI that understands events as they happen.</p></div>
+        <div><strong>Instant Alerts</strong><p>Notifications the moment something matters.</p></div>
+        <div><strong>Privacy Focused</strong><p>You control what is detected, stored, and shared.</p></div>
+        <div><strong>24/7 Monitoring</strong><p>Designed to keep watch around the clock.</p></div>
       </div>
     </div>
   </section>
@@ -211,72 +206,239 @@
         <h2>Protection for what matters most.</h2>
         <a href="solutions.html">Explore all use cases →</a>
       </div>
-      <div class="tiles" data-stagger>
-        <a class="tile fade-up" href="solutions.html#driving">
-          <div class="tile__media g-night"><img class="ph-img" src="assets/img/usecase-teen-driving.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 16l1.5-5.5A2 2 0 0 1 8.4 9h7.2a2 2 0 0 1 1.9 1.5L19 16"/><rect x="4" y="15" width="16" height="5" rx="1.5"/><circle cx="7.5" cy="17.5" r="0.8" fill="currentColor"/><circle cx="16.5" cy="17.5" r="0.8" fill="currentColor"/></svg></div>
-          <div class="tile__body"><strong>Teen Driving</strong><p>Keep young drivers safe with real-time alerts.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#elderly">
-          <div class="tile__media g-warm"><img class="ph-img" src="assets/img/usecase-elderly.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 21s7-4.4 7-10a7 7 0 0 0-14 0c0 5.6 7 10 7 10Z"/><path d="M9.5 11.5 11 13l3.5-3.5"/></svg></div>
-          <div class="tile__body"><strong>Elderly Monitoring</strong><p>Detect falls and ensure loved ones are okay.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#baby">
-          <div class="tile__media g-blue"><img class="ph-img" src="assets/img/usecase-baby.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
-          <div class="tile__body"><strong>Baby &amp; Children</strong><p>Monitor babies and keep them out of harm.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#home">
-          <div class="tile__media g-slate"><img class="ph-img" src="assets/img/usecase-home.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 11 12 3l9 8"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></div>
-          <div class="tile__body"><strong>Home Security</strong><p>Know what's happening when you're away.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#education">
-          <div class="tile__media g-steel"><img class="ph-img" src="assets/img/usecase-proctoring.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 19h20"/><path d="M8 8h8M8 12h6"/></svg></div>
-          <div class="tile__body"><strong>Test Proctoring</strong><p>Prevent cheating with AI-powered detection.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#business">
-          <div class="tile__media g-blue"><img class="ph-img" src="assets/img/usecase-business.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
-          <div class="tile__body"><strong>Businesses</strong><p>Protect your employees, assets, and property.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#construction">
-          <div class="tile__media g-amber"><img class="ph-img" src="assets/img/usecase-construction.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg></div>
-          <div class="tile__body"><strong>Construction</strong><p>Enhance safety and monitor job sites.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#pets">
-          <div class="tile__media g-warm"><img class="ph-img" src="assets/img/usecase-pets.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17" cy="8" r="2"/><path d="M12 11c-3.5 0-6 2.4-6 5.2 0 1.6 1.2 2.8 2.8 2.8h6.4c1.6 0 2.8-1.2 2.8-2.8 0-2.8-2.5-5.2-6-5.2Z"/></svg></div>
-          <div class="tile__body"><strong>Pet Owners</strong><p>See, talk, and care for your pets remotely.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#agriculture">
-          <div class="tile__media g-green"><img class="ph-img" src="assets/img/usecase-agriculture.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 20c6 0 9-3 9-9V4"/><path d="M12 11c0-4 3-7 9-7 0 6-3 9-9 9"/><path d="M12 20v-9"/></svg></div>
-          <div class="tile__body"><strong>Agriculture</strong><p>Watch livestock, barns, and equipment.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#warehouse">
-          <div class="tile__media g-slate"><img class="ph-img" src="assets/img/usecase-warehouse.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 9 12 4l9 5"/><path d="M5 8.5V20h14V8.5"/><path d="M9 20v-4h6v4M9 12h6"/></svg></div>
-          <div class="tile__body"><strong>Warehouses</strong><p>Track activity across docks and aisles.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#retail">
-          <div class="tile__media g-teal"><img class="ph-img" src="assets/img/usecase-retail.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16l-1 12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 8z"/><path d="M8 11V6a4 4 0 0 1 8 0v5"/></svg></div>
-          <div class="tile__body"><strong>Retail Stores</strong><p>Deter theft and understand traffic.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#healthcare">
-          <div class="tile__media g-blue"><img class="ph-img" src="assets/img/usecase-hospital.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 21s7-4.4 7-10a7 7 0 0 0-14 0c0 5.6 7 10 7 10Z"/><path d="M12 8v6M9 11h6"/></svg></div>
-          <div class="tile__body"><strong>Hospitals</strong><p>Faster response to falls and emergencies.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#government">
-          <div class="tile__media g-night"><img class="ph-img" src="assets/img/usecase-parking.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a5 5 0 0 1 10 0v2"/><path d="M8 12h2v4H8zM14 12h2v4h-2z"/></svg></div>
-          <div class="tile__body"><strong>Parking Lots</strong><p>Vehicle detection and lot awareness.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#education">
-          <div class="tile__media g-steel"><img class="ph-img" src="assets/img/usecase-school.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="m12 3 10 5-10 5L2 8l10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg></div>
-          <div class="tile__body"><strong>Schools</strong><p>Campus safety and emergency awareness.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#warehouse">
-          <div class="tile__media g-amber"><img class="ph-img" src="assets/img/usecase-manufacturing.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20h16M6 20V10h4v10M14 20V6h4v14"/><circle cx="8" cy="6.5" r="1.6"/></svg></div>
-          <div class="tile__body"><strong>Manufacturing</strong><p>Safer floors and restricted zones.</p></div>
-        </a>
-        <a class="tile fade-up" href="solutions.html#government">
-          <div class="tile__media g-teal"><img class="ph-img" src="assets/img/usecase-smart-city.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 21V9l5-4v16M9 21V5l6 4v12M15 21V9l5 3v9"/><path d="M2 21h20"/></svg></div>
-          <div class="tile__body"><strong>Smart Cities</strong><p>Intelligent awareness for public spaces.</p></div>
-        </a>
+      <div class="ucc" id="uccRoot">
+        <button class="ucc__arrow ucc__arrow--prev" id="uccPrev" aria-label="Previous use case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <div class="ucc__viewport">
+          <div class="ucc__track" id="uccTrack">
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="1 of 16: Teen Driving">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 01</span>
+            <h3>Teen Driving</h3>
+            <p>Keep young drivers safe with real-time attention monitoring, right from the dashboard.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Detects distracted driving</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Monitors drowsiness patterns</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Instant alerts to parents</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#driving">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-teen-driving.jpg" alt="A teen driving while a dashboard camera monitors attention">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Eyes on Road ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="2 of 16: Elderly Monitoring">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 02</span>
+            <h3>Elderly Monitoring</h3>
+            <p>Independence for aging loved ones, with someone always quietly watching over.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Fall detection in seconds</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Unusual-inactivity alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Emergency contact notifications</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#elderly">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-elderly.jpg" alt="An elderly person living independently at home">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det tile__det--alert" aria-hidden="true"><i></i>Fall Detected – Alert Sent</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="3 of 16: Baby & Children">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 03</span>
+            <h3>Baby & Children</h3>
+            <p>Watch over sleeping babies and curious toddlers without hovering in the doorway.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Wake & motion alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Safety-zone monitoring</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Live nursery view anywhere</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#baby">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-baby.jpg" alt="A baby sleeping in a crib watched by a wall camera">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Baby Sleeping ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="4 of 16: Home Security">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 04</span>
+            <h3>Home Security</h3>
+            <p>Know what's happening at home the moment it happens — not hours later on a recording.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Person & vehicle detection</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Package delivery alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Evening & night monitoring</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#home">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-home.jpg" alt="A modern home protected by AI security cameras at dusk">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Perimeter Secure ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="5 of 16: Test Proctoring">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 05</span>
+            <h3>Test Proctoring</h3>
+            <p>AI-assisted exam monitoring that lets staff focus on students, not screens.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Exam session monitoring</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Attention awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Event summaries for review</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#education">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-proctoring.jpg" alt="A student taking an online exam at a clean desk">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Session Active ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="6 of 16: Businesses">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 06</span>
+            <h3>Businesses</h3>
+            <p>Protect your employees, assets, and property with meaningful events instead of a wall of monitors.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> After-hours activity alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Visitor & arrival awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Asset protection</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#business">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-business.jpg" alt="A modern office with employees working">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Workplace Secure ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="7 of 16: Construction">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 07</span>
+            <h3>Construction</h3>
+            <p>A safer job site, where hazards are flagged in the moment — not discovered in a report.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-zone alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Equipment movement tracking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> PPE detection on the roadmap</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#construction">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-construction.jpg" alt="Construction workers in PPE on an active job site">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det tile__det--warn" aria-hidden="true"><i></i>Hard Hat Missing ⚠</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="8 of 16: Pet Owners">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 08</span>
+            <h3>Pet Owners</h3>
+            <p>See, hear, and check on your pets from anywhere — and know when they wander.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Pet & zone detection</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Activity overview while away</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Live view from your phone</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#pets">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-pets.jpg" alt="A dog relaxing on a couch at home">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Pet Detected ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="9 of 16: Agriculture">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 09</span>
+            <h3>Agriculture</h3>
+            <p>Watch the whole farm — livestock, barns, gates, and equipment — from one intelligent eye.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Livestock awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Barn & equipment security</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Gate arrival alerts</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#agriculture">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-agriculture.jpg" alt="A farmer monitoring cattle near a barn">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Livestock Detected ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="10 of 16: Warehouses">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 10</span>
+            <h3>Warehouses</h3>
+            <p>Eyes on every aisle: docks, forklifts, and restricted areas, tracked as events.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Forklift & dock activity</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-area alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Aisle awareness</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#warehouse">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-warehouse.jpg" alt="A forklift moving through a warehouse aisle">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Forklift Detected ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="11 of 16: Retail Stores">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 11</span>
+            <h3>Retail Stores</h3>
+            <p>Understand your store — from customer traffic to after-close movement.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Entrance & traffic awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Theft-deterrent alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> After-hours monitoring</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#retail">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-retail.jpg" alt="Customers shopping in a premium retail store">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det tile__det--warn" aria-hidden="true"><i></i>Suspicious Activity Detected</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="12 of 16: Hospitals">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 12</span>
+            <h3>Hospitals</h3>
+            <p>Faster response when minutes matter — falls and incidents flagged instantly.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Patient fall detection</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Hallway & ward awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-access alerts</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#healthcare">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-hospital.jpg" alt="A nurse caring for a patient in a hospital room">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Patient Resting ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="13 of 16: Parking Lots">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 13</span>
+            <h3>Parking Lots</h3>
+            <p>Well-lit, well-watched: intelligent awareness for garages and lots.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Vehicle detection & logging</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Lot activity awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> After-hours alerts</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#government">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-parking.jpg" alt="A modern parking garage monitored by a camera">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Vehicle Logged ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="14 of 16: Schools">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 14</span>
+            <h3>Schools</h3>
+            <p>Campus safety that surfaces what matters, without staff watching screens all day.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Campus safety awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Emergency detection</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Event timelines for staff</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#education">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-school.jpg" alt="Students walking through a bright school hallway">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Campus Normal ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="15 of 16: Manufacturing">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 15</span>
+            <h3>Manufacturing</h3>
+            <p>Advanced floors deserve advanced awareness — safety monitoring beside the robots.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Floor safety awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Restricted-zone alerts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Equipment monitoring</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#warehouse">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-manufacturing.jpg" alt="A factory floor with robotic machinery and a supervisor">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>PPE Verified ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="16 of 16: Smart Cities">
+          <div class="ucc__content">
+            <span class="eyebrow">Use Case 16</span>
+            <h3>Smart Cities</h3>
+            <p>Intelligent awareness for the places everyone shares — intersections, plazas, and facilities.</p>
+            <ul class="ucc__features"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Public-space awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Vehicle & traffic detection</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Municipal event timelines</li></ul>
+            <a class="btn btn--dark btn--sm ucc__cta" href="solutions.html#government">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/usecase-smart-city.jpg" alt="A downtown intersection monitored by smart cameras">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Traffic Normal ✓</span>
+          </div>
+        </article>
+          </div>
+        </div>
+        <button class="ucc__arrow ucc__arrow--next" id="uccNext" aria-label="Next use case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
       </div>
+      <div class="ucc__dots" id="uccDots" role="tablist" aria-label="Use case slides"><button type="button" role="tab" aria-label="Go to slide 1"></button><button type="button" role="tab" aria-label="Go to slide 2"></button><button type="button" role="tab" aria-label="Go to slide 3"></button><button type="button" role="tab" aria-label="Go to slide 4"></button><button type="button" role="tab" aria-label="Go to slide 5"></button><button type="button" role="tab" aria-label="Go to slide 6"></button><button type="button" role="tab" aria-label="Go to slide 7"></button><button type="button" role="tab" aria-label="Go to slide 8"></button><button type="button" role="tab" aria-label="Go to slide 9"></button><button type="button" role="tab" aria-label="Go to slide 10"></button><button type="button" role="tab" aria-label="Go to slide 11"></button><button type="button" role="tab" aria-label="Go to slide 12"></button><button type="button" role="tab" aria-label="Go to slide 13"></button><button type="button" role="tab" aria-label="Go to slide 14"></button><button type="button" role="tab" aria-label="Go to slide 15"></button><button type="button" role="tab" aria-label="Go to slide 16"></button></div>
     </div>
   </section>
 
@@ -295,7 +457,7 @@
         </ul>
         <div class="price-row">
           <span class="price-big">$499</span>
-          <small>Free shipping &nbsp;·&nbsp; 30-day returns &nbsp;·&nbsp; 1-year warranty</small>
+          <small>30-day returns &nbsp;·&nbsp; 1-year warranty</small>
         </div>
         <div class="split__actions" style="margin-top:0">
           <button class="btn btn--dark" data-add-to-cart>Add to Cart</button>
@@ -306,69 +468,63 @@
       <div class="gallery fade-up">
         <div class="gallery__main">
           <div class="gallery__view is-active" data-view-panel="angled">
-            <svg viewBox="0 0 420 300" fill="none" aria-label="SensorDyme camera, angled view">
-              <ellipse cx="210" cy="262" rx="120" ry="14" fill="#111111" opacity="0.07"/>
-              <path d="M96 92c0-14 10-25 24-27l176-22c16-2 30 9 32 25l8 84c2 16-9 30-25 32l-178 22c-16 2-31-9-33-25l-4-89z" fill="#2A2D33"/>
-              <path d="M96 92c0-14 10-25 24-27l176-22c16-2 30 9 32 25l8 84c2 16-9 30-25 32l-178 22c-16 2-31-9-33-25l-4-89z" stroke="#44484F" stroke-width="1.5"/>
-              <ellipse cx="216" cy="132" rx="52" ry="48" fill="#17181C" stroke="#54585F" stroke-width="2.5"/>
-              <ellipse cx="216" cy="132" rx="32" ry="29" fill="#0B0C0F"/>
-              <ellipse cx="204" cy="119" rx="9" ry="8" fill="#3D4C66" opacity="0.9"/>
-              <circle cx="308" cy="72" r="5" fill="#22C55E"/>
-              <circle cx="136" cy="80" r="3" fill="#17181C"/><circle cx="150" cy="78" r="3" fill="#17181C"/><circle cx="164" cy="76" r="3" fill="#17181C"/>
-              <rect x="196" y="208" width="44" height="12" rx="5" fill="#26292E" transform="rotate(-6 218 214)"/>
-              <rect x="204" y="220" width="26" height="34" rx="8" fill="#26292E" transform="rotate(-4 217 237)"/>
+            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SensorDyme camera, angled view">
+              <ellipse cx="210" cy="274" rx="128" ry="12" fill="#111111" opacity="0.07"/>
+              <g transform="rotate(-6 210 150)">
+                <path d="M330 92 q22 10 22 30 v56 q0 20 -22 30 v-116z" fill="#2C2F35"/>
+                <rect x="80" y="78" width="252" height="132" rx="56" fill="#3A3D43" stroke="#4C4F56" stroke-width="1.5"/>
+                <circle cx="182" cy="110" r="3" fill="#1A1C20"/><circle cx="196" cy="110" r="3" fill="#1A1C20"/><circle cx="210" cy="110" r="3" fill="#1A1C20"/><circle cx="224" cy="110" r="3" fill="#1A1C20"/><circle cx="238" cy="110" r="3" fill="#1A1C20"/>
+                <circle cx="118" cy="116" r="4.5" fill="#1A1C20"/><circle cx="294" cy="116" r="4.5" fill="#1A1C20"/>
+                <rect x="142" y="124" width="128" height="56" rx="28" fill="#17181C"/>
+                <ellipse cx="206" cy="152" rx="21" ry="20" fill="#0B0C0F" stroke="#2A2D33" stroke-width="2"/>
+                <ellipse cx="200" cy="145" rx="6.5" ry="6" fill="#2E4468" opacity="0.9"/>
+                <rect x="186" y="188" width="40" height="6" rx="3" fill="#A9AEB6"/>
+              </g>
             </svg>
           </div>
           <div class="gallery__view" data-view-panel="front">
-            <svg viewBox="0 0 420 300" fill="none" aria-label="SensorDyme camera, front view">
-              <ellipse cx="210" cy="268" rx="110" ry="12" fill="#111111" opacity="0.07"/>
-              <rect x="90" y="60" width="240" height="140" rx="26" fill="#2A2D33" stroke="#44484F" stroke-width="1.5"/>
-              <circle cx="150" cy="82" r="3" fill="#17181C"/><circle cx="165" cy="82" r="3" fill="#17181C"/><circle cx="180" cy="82" r="3" fill="#17181C"/><circle cx="195" cy="82" r="3" fill="#17181C"/>
-              <circle cx="210" cy="132" r="48" fill="#17181C" stroke="#54585F" stroke-width="2.5"/>
-              <circle cx="210" cy="132" r="30" fill="#0B0C0F"/>
-              <circle cx="199" cy="120" r="8" fill="#3D4C66" opacity="0.9"/>
-              <circle cx="304" cy="84" r="4.5" fill="#22C55E"/>
-              <rect x="188" y="200" width="44" height="10" rx="4" fill="#26292E"/>
-              <rect x="197" y="210" width="26" height="42" rx="9" fill="#26292E"/>
+            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SensorDyme camera, front view">
+              <ellipse cx="210" cy="272" rx="120" ry="11" fill="#111111" opacity="0.07"/>
+              <rect x="85" y="80" width="250" height="130" rx="56" fill="#3A3D43" stroke="#4C4F56" stroke-width="1.5"/>
+              <circle cx="182" cy="112" r="3" fill="#1A1C20"/><circle cx="196" cy="112" r="3" fill="#1A1C20"/><circle cx="210" cy="112" r="3" fill="#1A1C20"/><circle cx="224" cy="112" r="3" fill="#1A1C20"/><circle cx="238" cy="112" r="3" fill="#1A1C20"/>
+              <circle cx="122" cy="118" r="4.5" fill="#1A1C20"/><circle cx="298" cy="118" r="4.5" fill="#1A1C20"/>
+              <rect x="146" y="126" width="128" height="56" rx="28" fill="#17181C"/>
+              <circle cx="210" cy="154" r="20" fill="#0B0C0F" stroke="#2A2D33" stroke-width="2"/>
+              <circle cx="204" cy="147" r="6" fill="#2E4468" opacity="0.9"/>
+              <rect x="190" y="190" width="40" height="6" rx="3" fill="#A9AEB6"/>
             </svg>
           </div>
           <div class="gallery__view" data-view-panel="side">
-            <svg viewBox="0 0 420 300" fill="none" aria-label="SensorDyme camera, side view">
-              <ellipse cx="210" cy="268" rx="90" ry="12" fill="#111111" opacity="0.07"/>
-              <rect x="150" y="62" width="120" height="136" rx="24" fill="#2A2D33" stroke="#44484F" stroke-width="1.5"/>
-              <rect x="258" y="96" width="26" height="68" rx="10" fill="#1E2126" stroke="#44484F" stroke-width="1.5"/>
-              <rect x="168" y="82" width="8" height="26" rx="4" fill="#17181C"/>
-              <rect x="168" y="116" width="8" height="26" rx="4" fill="#17181C"/>
-              <rect x="186" y="198" width="48 " height="10" rx="4" fill="#26292E"/>
-              <rect x="197" y="208" width="26" height="44" rx="9" fill="#26292E"/>
+            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SensorDyme camera, side view">
+              <ellipse cx="210" cy="268" rx="70" ry="10" fill="#111111" opacity="0.07"/>
+              <rect x="168" y="82" width="90" height="128" rx="42" fill="#3A3D43" stroke="#4C4F56" stroke-width="1.5"/>
+              <rect x="248" y="124" width="16" height="48" rx="8" fill="#17181C"/>
+              <circle cx="196" cy="112" r="3" fill="#1A1C20"/>
+              <circle cx="196" cy="146" r="3" fill="#1A1C20"/>
             </svg>
           </div>
           <div class="gallery__view" data-view-panel="back">
-            <svg viewBox="0 0 420 300" fill="none" aria-label="SensorDyme camera, back view">
-              <ellipse cx="210" cy="268" rx="110" ry="12" fill="#111111" opacity="0.07"/>
-              <rect x="90" y="60" width="240" height="140" rx="26" fill="#2A2D33" stroke="#44484F" stroke-width="1.5"/>
-              <rect x="176" y="96" width="68" height="12" rx="6" fill="#1B1D22"/>
-              <rect x="176" y="120" width="68" height="12" rx="6" fill="#1B1D22"/>
-              <rect x="184" y="152" width="22" height="14" rx="4" fill="#111318" stroke="#54585F"/>
-              <rect x="216" y="152" width="22" height="14" rx="4" fill="#111318" stroke="#54585F"/>
-              <circle cx="300" cy="180" r="8" fill="#1B1D22" stroke="#54585F"/>
-              <rect x="188" y="200" width="44" height="10" rx="4" fill="#26292E"/>
-              <rect x="197" y="210" width="26" height="42" rx="9" fill="#26292E"/>
+            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SensorDyme camera, back view">
+              <ellipse cx="210" cy="272" rx="120" ry="11" fill="#111111" opacity="0.07"/>
+              <rect x="85" y="80" width="250" height="130" rx="56" fill="#3A3D43" stroke="#4C4F56" stroke-width="1.5"/>
+              <rect x="162" y="112" width="96" height="8" rx="4" fill="#2A2D33"/>
+              <rect x="162" y="130" width="96" height="8" rx="4" fill="#2A2D33"/>
+              <rect x="194" y="172" width="32" height="10" rx="5" fill="#101216" stroke="#4C4F56"/>
             </svg>
           </div>
         </div>
         <div class="gallery__thumbs" role="tablist" aria-label="Product views">
           <button class="gthumb is-active" data-view="angled" aria-label="Angled view">
-            <svg viewBox="0 0 60 40" fill="none"><path d="M12 12c0-3 2-5 5-6l26-3c3 0 6 2 6 5l1 13c0 3-2 6-5 6l-27 3c-3 0-6-2-6-5l0-13z" fill="#2A2D33"/><ellipse cx="31" cy="19" rx="8" ry="7" fill="#0B0C0F"/></svg>
+            <svg viewBox="0 0 60 40" fill="none"><g transform="rotate(-6 30 20)"><rect x="9" y="8" width="42" height="24" rx="11" fill="#3A3D43"/><rect x="19" y="15" width="22" height="10" rx="5" fill="#17181C"/></g></svg>
           </button>
           <button class="gthumb" data-view="front" aria-label="Front view">
-            <svg viewBox="0 0 60 40" fill="none"><rect x="10" y="8" width="40" height="24" rx="6" fill="#2A2D33"/><circle cx="30" cy="20" r="8" fill="#0B0C0F"/></svg>
+            <svg viewBox="0 0 60 40" fill="none"><rect x="9" y="8" width="42" height="24" rx="11" fill="#3A3D43"/><rect x="19" y="15" width="22" height="10" rx="5" fill="#17181C"/><circle cx="30" cy="20" r="3.4" fill="#0B0C0F"/></svg>
           </button>
           <button class="gthumb" data-view="side" aria-label="Side view">
-            <svg viewBox="0 0 60 40" fill="none"><rect x="18" y="7" width="18" height="26" rx="5" fill="#2A2D33"/><rect x="34" y="13" width="6" height="14" rx="3" fill="#1E2126"/></svg>
+            <svg viewBox="0 0 60 40" fill="none"><rect x="21" y="7" width="16" height="26" rx="8" fill="#3A3D43"/><rect x="35" y="15" width="4" height="10" rx="2" fill="#17181C"/></svg>
           </button>
           <button class="gthumb" data-view="back" aria-label="Back view">
-            <svg viewBox="0 0 60 40" fill="none"><rect x="10" y="8" width="40" height="24" rx="6" fill="#2A2D33"/><rect x="22" y="15" width="16" height="3" rx="1.5" fill="#111318"/><rect x="22" y="21" width="16" height="3" rx="1.5" fill="#111318"/></svg>
+            <svg viewBox="0 0 60 40" fill="none"><rect x="9" y="8" width="42" height="24" rx="11" fill="#3A3D43"/><rect x="19" y="15" width="22" height="3" rx="1.5" fill="#2A2D33"/><rect x="19" y="21" width="22" height="3" rx="1.5" fill="#2A2D33"/></svg>
           </button>
           <a class="gthumb" href="product.html" aria-label="See the interactive 360 view">360°</a>
         </div>
@@ -386,8 +542,7 @@
       <!-- Demo thumbnails are illustrative placeholders — replace with real footage when available -->
       <div class="demo-grid" data-stagger>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-blue"><img class="ph-img" src="assets/img/demo-baby-pool.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="7" r="3.4"/><path d="M6 21c0-3.2 2.6-5.4 6-5.4s6 2.2 6 5.4"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-baby-pool.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#22C55E"></i> Child Detected</span>
@@ -398,8 +553,7 @@
           <div class="demo-card__body"><strong>Baby Near Pool</strong><p>AI detects a child approaching the pool.</p></div>
         </div>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-warm"><img class="ph-img" src="assets/img/demo-fall.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="9" cy="6" r="2.6"/><path d="M9 9v5m0 0-4 6m4-6 5 2 4 3M9 11l-5 2"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-fall.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#EF4444"></i> Fall Detected</span>
@@ -410,8 +564,7 @@
           <div class="demo-card__body"><strong>Fall Detected</strong><p>AI detects a fall and alerts emergency contacts.</p></div>
         </div>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-night"><img class="ph-img" src="assets/img/demo-driving.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 16l1.5-5.5A2 2 0 0 1 8.4 9h7.2a2 2 0 0 1 1.9 1.5L19 16"/><rect x="4" y="15" width="16" height="5" rx="1.5"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-driving.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#EF4444"></i> Eyes Off Road</span>
@@ -422,8 +575,7 @@
           <div class="demo-card__body"><strong>Distracted Driving</strong><p>AI detects distraction and issues an alert.</p></div>
         </div>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-slate"><img class="ph-img" src="assets/img/demo-package.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.5 8.5 12 13l8.5-4.5M12 13v8"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-package.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#22C55E"></i> Package Delivered</span>
@@ -434,8 +586,7 @@
           <div class="demo-card__body"><strong>Package Delivered</strong><p>Know when packages arrive at your door.</p></div>
         </div>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-green"><img class="ph-img" src="assets/img/demo-restricted.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v4M12 15h.01"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-restricted.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#EF4444"></i> Restricted Zone</span>
@@ -446,8 +597,7 @@
           <div class="demo-card__body"><strong>Restricted Area</strong><p>AI alerts when someone enters restricted zones.</p></div>
         </div>
         <div class="demo-card fade-up">
-          <div class="demo-card__media g-amber"><img class="ph-img" src="assets/img/demo-pet.png" alt="" loading="lazy" onerror="this.remove()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="8" r="2"/><circle cx="12" cy="5.5" r="2"/><circle cx="17" cy="8" r="2"/><path d="M12 11c-3.5 0-6 2.4-6 5.2 0 1.6 1.2 2.8 2.8 2.8h6.4c1.6 0 2.8-1.2 2.8-2.8 0-2.8-2.5-5.2-6-5.2Z"/></svg>
+          <div class="demo-card__media"><img class="ph-img" src="assets/img/demo-pet.jpg" alt="" loading="lazy" onerror="this.remove()">
             <span class="play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg></span>
             <div class="demo-chips">
               <span class="demo-chip"><i style="background:#22C55E"></i> Pet Detected</span>
@@ -519,18 +669,86 @@
   </section>
 
   <!-- ============ LIFESTYLE GALLERY ============ -->
-  <section class="section section--tight">
-    <div class="container photo-strip" data-stagger>
-      <div class="photo-strip__intro fade-up">
+  <section class="section section--tight" id="anywhere">
+    <div class="container">
+      <div class="section-row-head fade-up">
         <h2>Beautifully designed. Built for anywhere.</h2>
-        <p>Compact, durable, and powerful. SensorDyme fits seamlessly into any environment.</p>
+        <a href="product.html">Meet the camera →</a>
       </div>
-      <!-- Placeholder tiles — swap for final lifestyle photography -->
-      <div class="photo-ph g-slate fade-up"><img class="ph-img" src="assets/img/place-shelf.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 21h18M5 21V8h14v13"/><path d="M9 12h6"/></svg><span>Shelf</span></div>
-      <div class="photo-ph g-steel fade-up"><img class="ph-img" src="assets/img/place-desk.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="5" width="18" height="11" rx="2"/><path d="M8 21h8M12 16v5"/></svg><span>Desk</span></div>
-      <div class="photo-ph g-blue fade-up"><img class="ph-img" src="assets/img/place-office.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg><span>Office</span></div>
-      <div class="photo-ph g-warm fade-up"><img class="ph-img" src="assets/img/place-wall.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="4" width="12" height="16" rx="2"/><circle cx="12" cy="10" r="3"/></svg><span>Wall Mount</span></div>
-      <div class="photo-ph g-night fade-up"><img class="ph-img" src="assets/img/place-outdoor.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 16.6A5 5 0 0 0 18 7h-1.3A8 8 0 1 0 4 15.3"/><path d="M8 19v2M12 18v3M16 19v2"/></svg><span>Outdoor</span></div>
+      <div class="ucc">
+        <button class="ucc__arrow ucc__arrow--prev" aria-label="Previous placement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+        <div class="ucc__viewport">
+          <div class="ucc__track">
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="1 of 5: At home on any shelf.">
+          <div class="ucc__content">
+            <span class="eyebrow">Placement 01</span>
+            <h3>At home on any shelf.</h3>
+            <p>Compact enough to disappear into your décor — powerful enough to watch over everything.</p>
+            <a class="btn btn--dark btn--sm ucc__cta" href="product.html" style="margin-top:26px">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/place-shelf.jpg" alt="The SensorDyme camera on a wooden bookshelf">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Monitoring ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Your desk's quiet co-worker.">
+          <div class="ucc__content">
+            <span class="eyebrow">Placement 02</span>
+            <h3>Your desk's quiet co-worker.</h3>
+            <p>Sits beside your laptop and keeps an eye on the room while you focus on the work.</p>
+            <a class="btn btn--dark btn--sm ucc__cta" href="product.html" style="margin-top:26px">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/place-desk.jpg" alt="The SensorDyme camera on a minimal desk beside a laptop">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Room Secure ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Made for the modern office.">
+          <div class="ucc__content">
+            <span class="eyebrow">Placement 03</span>
+            <h3>Made for the modern office.</h3>
+            <p>Blends into professional spaces while keeping the workplace aware and protected.</p>
+            <a class="btn btn--dark btn--sm ucc__cta" href="product.html" style="margin-top:26px">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/place-office.jpg" alt="The SensorDyme camera mounted in a modern office corridor">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Workplace Secure ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Mounted. Out of the way.">
+          <div class="ucc__content">
+            <span class="eyebrow">Placement 04</span>
+            <h3>Mounted. Out of the way.</h3>
+            <p>Wall-mount hardware included — set the perfect angle once and forget it's there.</p>
+            <a class="btn btn--dark btn--sm ucc__cta" href="product.html" style="margin-top:26px">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/place-wall.jpg" alt="Close-up of the SensorDyme camera wall-mounted indoors">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>Angle Locked ✓</span>
+          </div>
+        </article>
+        <article class="ucc__slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Ready for the elements.">
+          <div class="ucc__content">
+            <span class="eyebrow">Placement 05</span>
+            <h3>Ready for the elements.</h3>
+            <p>A weather-ready design built to keep watch through rain and night. Final rating TBD.</p>
+            <a class="btn btn--dark btn--sm ucc__cta" href="product.html" style="margin-top:26px">Learn More</a>
+          </div>
+          <div class="ucc__media">
+            <img src="assets/img/place-outdoor.jpg" alt="The SensorDyme camera mounted outdoors under a roof eave">
+            <span class="tile__vf" aria-hidden="true"></span>
+            <span class="tile__det" aria-hidden="true"><i></i>All Clear ✓</span>
+          </div>
+        </article>
+          </div>
+        </div>
+        <button class="ucc__arrow ucc__arrow--next" aria-label="Next placement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+      </div>
+      <div class="ucc__dots" role="tablist" aria-label="Placement slides"><button type="button" role="tab" aria-label="Go to slide 1"></button><button type="button" role="tab" aria-label="Go to slide 2"></button><button type="button" role="tab" aria-label="Go to slide 3"></button><button type="button" role="tab" aria-label="Go to slide 4"></button><button type="button" role="tab" aria-label="Go to slide 5"></button></div>
     </div>
   </section>
 
@@ -545,7 +763,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> You control your data</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> No unnecessary cloud storage</li>
         </ul>
-        <div class="bento__visual g-night"><img class="ph-img" src="assets/img/bento-privacy.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.6" fill="currentColor"/></svg></div>
+        <div class="bento__visual"><img class="ph-img" src="assets/img/bento-privacy.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
       </div>
       <div class="bento__card fade-up">
         <h3>Day or Night.<br>Always Clear.</h3>
@@ -553,10 +771,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Advanced night vision <em style="font-style:normal;color:#999">(planned)</em></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> HDR imaging goals</li>
         </ul>
-        <div class="bento__visual bento__visual--split"><img class="ph-img" src="assets/img/bento-day-night.png" alt="" loading="lazy" onerror="this.remove()">
-          <div class="day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg> Day</div>
-          <div class="night"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg> Night</div>
-        </div>
+        <div class="bento__visual"><img class="ph-img" src="assets/img/bento-day-night.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
       </div>
       <div class="bento__card fade-up">
         <h3>Works with Your Life.</h3>
@@ -565,7 +780,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Live view &amp; smart timeline</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Rules in plain language</li>
         </ul>
-        <div class="bento__visual g-blue"><img class="ph-img" src="assets/img/bento-app.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <div class="bento__visual"><img class="ph-img" src="assets/img/bento-app.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
       </div>
       <div class="bento__card fade-up">
         <h3>Built to Last.</h3>
@@ -574,7 +789,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Rigorous reliability testing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg> Weather-ready design <em style="font-style:normal;color:#999">(rating TBD)</em></li>
         </ul>
-        <div class="bento__visual g-steel"><img class="ph-img" src="assets/img/bento-durable.png" alt="" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3c3 4 6 6.5 6 10a6 6 0 0 1-12 0c0-3.5 3-6 6-10z"/></svg></div>
+        <div class="bento__visual"><img class="ph-img" src="assets/img/bento-durable.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
       </div>
     </div>
   </section>
@@ -586,7 +801,7 @@
   <div class="container">
     <div class="footer2__main">
       <div class="footer2__brand">
-        <img src="assets/logo.svg" alt="SensorDyme">
+        <div class="footer2__logo"><img src="assets/logo-mark.svg" alt=""><span class="wordmark">SensorDyme</span></div>
         <p>The camera that detects and protects. Smarter AI. Safer world.</p>
         <div class="footer2__social">
           <a href="https://www.instagram.com/sensordyme/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -601,12 +816,12 @@
         </div>
       </div>
       <div class="footer2__cta">
+        <img class="footer2__cta-mark" src="assets/logo-mark.svg" alt="">
         <h3>Ready to protect what matters most?</h3>
         <p>Join the families and businesses using SensorDyme.</p>
         <button class="btn btn--dark" data-add-to-cart>Add to Cart — $499</button>
       </div>
       <div class="perks">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg> Free Shipping</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg> 30-Day Returns</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="6"/><path d="m9 14-1.5 7L12 18.5 16.5 21 15 14"/></svg> 1-Year Warranty</div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Secure Checkout</div>

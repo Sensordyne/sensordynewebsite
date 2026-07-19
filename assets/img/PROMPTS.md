@@ -8,63 +8,84 @@ changes needed. (PNG format; keep roughly the same aspect ratio as the current f
 
 **Style prefix — prepend to every prompt:**
 
-> Premium product-lifestyle photography, bright natural light, clean modern
-> aesthetic like an Apple ad, shallow depth of field, a small matte-graphite
-> smart camera with a dark lens and a tiny green LED visible in the scene,
-> photorealistic, no text or watermarks.
+> Ultra photorealistic premium marketing photography for a technology brand,
+> Apple-quality commercial advertisement, cinematic natural lighting,
+> professional color grading, high dynamic range, extremely sharp, clean
+> minimalist composition, 8K quality. No text, watermarks, or logos.
 
-## Use-case tiles (~600×490, "Protection for what matters most")
+**Official camera description — use wherever the camera appears:**
 
-| File | Prompt |
+> a small wide matte-graphite smart camera with a smooth rounded rectangular
+> body, a dark pill-shaped front panel with one centered circular lens, and a
+> row of tiny microphone holes above the lens
+
+**Official assets:** save the real logo as `assets/logo-official.png`
+(transparent PNG) — the site automatically switches every logo mark and the
+favicon to it. For perfect product fidelity, composite real photos of the
+hardware over the AI backgrounds; text-to-image can only approximate the
+exact device.
+
+## Use-case tiles (640×520 .jpg, "Protection for what matters most")
+
+These 16 tiles now use **AI-generated photographs** (generated via pollinations.ai
+with the prompts below — regenerate any of them with the same prompt in your
+preferred image tool and overwrite the .jpg). The viewfinder corners and the
+detection label ("Eyes on Road ✓", "Hard Hat Missing ⚠", …) are rendered live
+by the site on top of the photo — do NOT bake text or labels into the images.
+
+| File | Prompt (append the style prefix above) |
 |---|---|
-| usecase-teen-driving.png | Interior of a car, a teenage driver with both hands on the wheel and eyes on the road, the smart camera mounted on the dashboard facing them |
-| usecase-elderly.png | A smiling elderly person walking safely through a bright living room with a cane, the smart camera on a shelf watching over the room |
-| usecase-baby.png | A peaceful nursery with a baby sleeping in a crib, the smart camera on a dresser gently overlooking the crib |
-| usecase-home.png | A modern suburban house exterior at golden hour, the smart camera mounted near the front door overlooking the driveway |
-| usecase-proctoring.png | A bright classroom during an exam, students at desks writing, the smart camera mounted at the front of the room |
-| usecase-business.png | A modern office lobby with glass walls, the smart camera mounted near the entrance |
-| usecase-construction.png | An active construction site with workers in hard hats and a crane, the smart camera mounted on a pole overlooking the site |
-| usecase-pets.png | A golden retriever playing in a fenced backyard, the smart camera mounted on the house wall watching the yard |
-| usecase-agriculture.png | A red barn and pasture with cattle at sunrise, the smart camera mounted on the barn corner |
-| usecase-warehouse.png | A large warehouse aisle with tall racks and a forklift, the smart camera mounted high on a beam |
-| usecase-retail.png | A boutique retail store entrance with customers browsing, the smart camera mounted above the door |
-| usecase-hospital.png | A clean, calm hospital room with an empty bed and soft daylight, the smart camera mounted high on the wall |
-| usecase-parking.png | A well-lit parking lot at dusk with rows of cars, the smart camera mounted on a light pole |
-| usecase-school.png | A university campus quad with students walking between buildings, the smart camera mounted on a building corner |
-| usecase-manufacturing.png | A modern factory floor with machinery and a worker in safety gear, the smart camera mounted overhead |
-| usecase-smart-city.png | A city plaza with pedestrians and modern buildings, the smart camera mounted on a smart street pole |
+| usecase-teen-driving.jpg | A teenage driver with both hands on the steering wheel and eyes on the road, modern car interior, a small black dashboard camera mounted near the rearview mirror |
+| usecase-elderly.jpg | A smiling elderly person living independently, reading in a bright cozy living room with a cup of tea |
+| usecase-baby.jpg | A parent holding a smartphone showing a baby-monitor camera app, with a baby sleeping peacefully in a crib in a softly lit nursery behind them |
+| usecase-home.jpg | A modern suburban house exterior at golden hour with warm lights on, a small security camera mounted under the roof eave overlooking the driveway |
+| usecase-proctoring.jpg | A focused university student taking an online exam on a laptop at a clean desk in a bright room, a small webcam beside the laptop |
+| usecase-business.jpg | A modern open-plan office with employees working at desks, glass walls and natural light |
+| usecase-construction.jpg | Construction workers wearing hard hats and high-visibility vests on an active job site with a crane in the background |
+| usecase-pets.jpg | A golden retriever relaxing on a couch in a bright modern living room |
+| usecase-agriculture.jpg | A farmer standing by a pasture fence checking on cattle in the morning light, a small camera mounted on the barn post |
+| usecase-warehouse.jpg | A large modern warehouse aisle with tall inventory racks and a forklift, bright industrial lighting |
+| usecase-retail.jpg | A modern boutique retail store interior with customers browsing shelves, warm inviting lighting |
+| usecase-hospital.jpg | A nurse caring for a patient in a bright modern hospital room, calm and professional |
+| usecase-parking.jpg | A well-lit modern parking garage with clean lines and parked cars, a small security camera mounted on a column |
+| usecase-school.jpg | A modern school hallway with students walking safely between classes carrying backpacks, bright daylight |
+| usecase-manufacturing.jpg | An advanced factory floor with automated robotic machinery and a worker in safety gear supervising |
+| usecase-smart-city.jpg | A modern downtown city intersection with pedestrians crossing and sleek buildings, cameras on a smart street pole |
 
-## Real-life demo cards (~720×495, "See how it works in real life")
+## Real-life demo cards (720×495 .jpg, "See how it works in real life")
 
-Note: the site overlays detection labels (e.g. "Child Detected") on these images —
-leave the lower-left corner of the frame relatively clear.
+These 6 cards use **AI-generated photographs**. The detection chips ("Child
+Detected", "Alert Sent", …) and play button are rendered live by the site —
+leave the lower-left corner of the frame relatively clear and do not bake
+text into the images.
 
-| File | Prompt |
+| File | Prompt (append the style prefix above) |
 |---|---|
-| demo-baby-pool.png | A backyard swimming pool with a toddler walking near the edge, viewed from a mounted smart camera's slightly elevated angle |
-| demo-fall.png | An elderly person who has slipped and is sitting on a living-room floor reaching for support, seen from a corner-mounted smart camera angle |
-| demo-driving.png | A driver glancing down at a phone behind the wheel, seen from a dashboard-mounted smart camera |
-| demo-package.png | A cardboard delivery box on a front porch by the door, seen from a doorbell-height smart camera |
-| demo-restricted.png | A construction fence line with a "restricted area" zone and a worker stepping through, seen from an elevated smart camera |
-| demo-pet.png | A dog trotting across a sunny backyard lawn, seen from a wall-mounted smart camera |
+| demo-baby-pool.jpg | A toddler in a swim diaper toddling along the stone deck beside a backyard swimming pool of a modern home, a few steps from the water's edge, slightly elevated angle, bright daylight |
+| demo-fall.jpg | An elderly person who has slipped and is sitting on the floor of a beautiful modern living room reaching toward a sofa for support, corner camera angle |
+| demo-driving.jpg | A young driver glancing down at a smartphone while behind the wheel of a modern car, dashboard camera angle |
+| demo-package.jpg | A delivery courier placing a cardboard package at the front door of a modern home, doorbell camera angle |
+| demo-restricted.jpg | A worker in a high-visibility vest stepping past a safety barrier into a restricted industrial zone, elevated security camera view |
+| demo-pet.jpg | A playful dog running across the living room of a beautiful modern home, wall-mounted camera angle |
 
-## Lifestyle gallery (~520×605, "Beautifully designed. Built for anywhere")
+## "Built for anywhere" carousel (720×460 .jpg)
 
-These should showcase the camera itself in the environment (product hero style).
+AI-generated product-in-place photos. The viewfinder + status chip are rendered
+live by the site — do not bake text into the images.
 
-| File | Prompt |
+| File | Prompt (append the style prefix above) |
 |---|---|
-| place-shelf.png | The matte-graphite smart camera sitting on a wooden bookshelf next to a small potted plant, cozy interior |
-| place-desk.png | The smart camera on a minimal white desk beside a laptop, bright home office |
-| place-office.png | The smart camera mounted in a modern office corridor, glass and light wood interior |
-| place-wall.png | Close-up of the smart camera wall-mounted on a warm-toned interior wall |
-| place-outdoor.png | The smart camera mounted under an exterior roof eave with rain droplets on its housing |
+| place-shelf.jpg | A small matte-black smart security camera sitting on a warm wooden bookshelf beside a potted plant and design books in a luxury modern living room, close product shot |
+| place-desk.jpg | A small matte-black smart security camera standing on a minimal white desk next to a sleek laptop in a bright premium home office, morning light |
+| place-office.jpg | A small matte-black smart security camera mounted flush on the wall of a modern glass-and-wood office corridor, architectural photography |
+| place-wall.jpg | Close-up of a small matte-black smart security camera wall-mounted on a warm interior wall, soft dramatic side lighting |
+| place-outdoor.jpg | A small matte-black weatherproof smart camera attached firmly under the roof eave of a luxury modern home at dusk, light rain, moody cinematic light |
 
-## Bento feature cards (~640×400)
+## Bento feature cards (640×400 .jpg)
 
-| File | Prompt |
+| File | Prompt (append the style prefix above) |
 |---|---|
-| bento-privacy.png | Abstract dark scene of a glowing padlock over encrypted data streams, premium tech aesthetic |
-| bento-day-night.png | Split composition: the same backyard seen in daylight on the left and in clear night vision on the right |
-| bento-app.png | A hand holding a phone showing a security-camera app with a live view and notifications (generic UI, no readable text) |
-| bento-durable.png | Macro shot of the smart camera's matte housing with water beading on it, dramatic lighting |
+| bento-privacy.jpg | Abstract premium dark scene of a minimalist glowing padlock with a plain body and simple round keyhole on a matte dark surface (no brand symbols) |
+| bento-day-night.jpg | Split composition of the same modern backyard: left half bright daylight, right half night, seamless divide |
+| bento-app.jpg | A hand holding a smartphone showing a home-security camera app with a live tile and notification cards, blurred premium living room behind, no readable text |
+| bento-durable.jpg | Macro shot of a small compact matte-black box-shaped smart camera with a single round lens, water droplets beading on the housing, dark studio lighting |

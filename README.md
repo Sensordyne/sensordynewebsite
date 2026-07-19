@@ -55,6 +55,25 @@ assets/logo-mark.svg  Icon-only mark (favicon, notification mockups)
   testimonials are labeled illustrative, and no invented performance metrics,
   certifications, or customer counts appear anywhere.
 
+## Official assets
+
+- **Logo**: save the official transparent logo as `assets/logo-official.png` —
+  the site auto-detects it and swaps every logo mark and the favicon. Until it
+  exists, a vector recreation (`assets/logo-mark.svg`) is used.
+- **Product photos**: the 3D hero model and all vector artwork follow the
+  official hardware design (wide graphite body, pill lens recess, mic holes,
+  light bar). AI scene photos describe the same device; for perfect fidelity,
+  composite real product photography using the prompts in `assets/img/PROMPTS.md`.
+
+## Languages
+
+The globe selector translates the entire site (13 languages). Dictionaries
+live in `assets/i18n/<code>.json`, keyed by the English source string; the
+runtime walker in `js/main.js` translates all text, attributes, and
+dynamically rendered content (cart, search), sets `lang`/`dir` (RTL for
+Arabic), and persists the choice in localStorage. After copy changes,
+re-extract strings and regenerate dictionaries (see PROMPTS.md notes).
+
 ## Local preview
 
 ```bash

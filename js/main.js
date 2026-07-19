@@ -8,6 +8,131 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------------- Official logo auto-swap ----------------
+     Drop the official transparent logo at assets/logo-official.png and every
+     mark on the site (nav, footer, loader, favicon) switches to it. */
+  (function () {
+    var probe = new Image();
+    probe.onload = function () {
+      document.querySelectorAll('img[src$="logo-mark.svg"]').forEach(function (img) {
+        img.src = 'assets/logo-official.png';
+      });
+      var icon = document.querySelector('link[rel="icon"]');
+      if (icon) icon.href = 'assets/logo-official.png';
+    };
+    probe.src = 'assets/logo-official.png';
+  })();
+
+  /* ---------------- I18N: full-site translation ----------------
+     Dictionaries live in assets/i18n/<code>.json keyed by the normalized
+     English source string. The walker stores each node's original English
+     so switching languages (or back to English) is lossless. A
+     MutationObserver translates dynamically rendered content (cart, search
+     results, carousel updates) with the active dictionary. */
+  var I18N_ATTRS = ['placeholder', 'aria-label', 'title', 'alt'];
+  var i18nCache = {};
+  var i18nDict = null; // null => English
+  var i18nOrigText = new WeakMap();
+  var i18nOrigAttrs = new WeakMap();
+  var i18nApplying = false;
+
+  function i18nKey(s) {
+    return s.replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function i18nText(node) {
+    var raw = node.nodeValue;
+    if (!raw || !i18nKey(raw)) return;
+    var orig = i18nOrigText.get(node);
+    if (orig === undefined) { orig = raw; i18nOrigText.set(node, orig); }
+    var next = i18nDict ? (i18nDict[i18nKey(orig)] || orig) : orig;
+    if (node.nodeValue !== next) node.nodeValue = next;
+  }
+
+  function i18nElement(el) {
+    if (el.nodeName === 'SCRIPT' || el.nodeName === 'STYLE') return;
+    var origs = i18nOrigAttrs.get(el);
+    I18N_ATTRS.forEach(function (attr) {
+      if (!el.hasAttribute(attr)) return;
+      if (!origs) { origs = {}; i18nOrigAttrs.set(el, origs); }
+      if (origs[attr] === undefined) origs[attr] = el.getAttribute(attr);
+      var next = i18nDict ? (i18nDict[i18nKey(origs[attr])] || origs[attr]) : origs[attr];
+      if (el.getAttribute(attr) !== next) el.setAttribute(attr, next);
+    });
+  }
+
+  function i18nWalk(root) {
+    i18nApplying = true;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (n.nodeType === 1 && (n.nodeName === 'SCRIPT' || n.nodeName === 'STYLE' || n.id === 'heroTitle')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    if (root.nodeType === 1) i18nElement(root);
+    var n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeType === 3) i18nText(n);
+      else i18nElement(n);
+    }
+    i18nApplying = false;
+  }
+
+  var heroTitleEl = document.getElementById('heroTitle');
+  if (heroTitleEl && !heroTitleEl.dataset.orig) {
+    heroTitleEl.dataset.orig = heroTitleEl.textContent;
+  }
+
+  function splitHeroWords(text) {
+    if (!heroTitleEl) return;
+    heroTitleEl.textContent = '';
+    if (reduceMotion) { heroTitleEl.textContent = text; return; }
+    text.split(/\s+/).filter(Boolean).forEach(function (word, i, arr) {
+      var span = document.createElement('span');
+      span.className = 'w';
+      span.textContent = word;
+      span.style.animationDelay = (0.15 + i * 0.12) + 's';
+      heroTitleEl.appendChild(span);
+      if (i < arr.length - 1) heroTitleEl.appendChild(document.createTextNode(' '));
+    });
+  }
+
+  var docTitleOrig = document.title;
+
+  function i18nApplyAll() {
+    i18nWalk(document.body);
+    document.title = i18nDict ? (i18nDict[i18nKey(docTitleOrig)] || docTitleOrig) : docTitleOrig;
+    if (heroTitleEl) {
+      var full = heroTitleEl.dataset.orig;
+      splitHeroWords(i18nDict ? (i18nDict[i18nKey(full)] || full) : full);
+    }
+  }
+
+  function applyLanguage(code) {
+    document.documentElement.lang = code;
+    document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
+    if (code === 'en') { i18nDict = null; i18nApplyAll(); return; }
+    if (i18nCache[code]) { i18nDict = i18nCache[code]; i18nApplyAll(); return; }
+    fetch('assets/i18n/' + code + '.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) { i18nCache[code] = d; i18nDict = d; i18nApplyAll(); })
+      .catch(function () { /* dictionary missing: stay in English */ });
+  }
+
+  if ('MutationObserver' in window) {
+    new MutationObserver(function (muts) {
+      if (i18nApplying || !i18nDict) return;
+      muts.forEach(function (m) {
+        m.addedNodes && m.addedNodes.forEach && m.addedNodes.forEach(function (n) {
+          if (n.nodeType === 1) i18nWalk(n);
+          else if (n.nodeType === 3) { i18nApplying = true; i18nText(n); i18nApplying = false; }
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
   /* ---------------- Loading screen ---------------- */
   var loader = document.getElementById('loader');
   if (loader) {
@@ -86,6 +211,7 @@
         savedLang = footerLang.value;
         try { localStorage.setItem('sd_lang', savedLang); } catch (e) {}
         renderLangs();
+        applyLanguage(savedLang);
       });
     }
 
@@ -104,16 +230,18 @@
           savedLang = pair[0];
           try { localStorage.setItem('sd_lang', savedLang); } catch (e) {}
           renderLangs();
+          applyLanguage(savedLang);
         });
         langMenu.appendChild(b);
       });
       var note = document.createElement('div');
       note.className = 'lang-menu__note';
-      note.textContent = 'Your preference is saved. Full translations are coming soon.';
+      note.textContent = 'Your language applies across the entire site.';
       langMenu.appendChild(note);
       syncLangUI();
     };
     renderLangs();
+    if (savedLang !== 'en') applyLanguage(savedLang);
 
     langBtn.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -249,7 +377,7 @@
       '</div></div>';
     cartFoot.innerHTML =
       '<div class="cart-line"><span>Subtotal</span><span>' + money(subtotal) + '</span></div>' +
-      '<div class="cart-line"><span>Estimated shipping</span><span>Free</span></div>' +
+      '<div class="cart-line"><span>Shipping</span><span>Calculated at confirmation</span></div>' +
       '<div class="cart-line"><span>Estimated tax</span><span>Calculated at confirmation</span></div>' +
       '<div class="cart-line cart-line--total"><span>Total</span><span>' + money(subtotal) + '</span></div>' +
       '<a class="btn btn--primary" id="checkoutBtn" href="mailto:hello@sensordyme.com?subject=' +
@@ -345,17 +473,76 @@
   }
 
   /* ---------------- Hero: word-by-word headline ---------------- */
-  var heroTitle = document.getElementById('heroTitle');
-  if (heroTitle && !reduceMotion) {
-    var words = heroTitle.textContent.split(/\s+/).filter(Boolean);
-    heroTitle.textContent = '';
-    words.forEach(function (word, i) {
-      var span = document.createElement('span');
-      span.className = 'w';
-      span.textContent = word;
-      span.style.animationDelay = (0.15 + i * 0.12) + 's';
-      heroTitle.appendChild(span);
-      if (i < words.length - 1) heroTitle.appendChild(document.createTextNode(' '));
+  if (heroTitleEl) splitHeroWords(heroTitleEl.dataset.orig);
+
+  /* ---------------- Hero carousels (supports multiple instances) ---------------- */
+  var carousels = [];
+  document.querySelectorAll('.ucc').forEach(function (root) {
+    var track = root.querySelector('.ucc__track');
+    if (!track) return;
+    var slides = track.querySelectorAll('.ucc__slide');
+    var dotsWrap = root.nextElementSibling;
+    if (!dotsWrap || !dotsWrap.classList.contains('ucc__dots')) dotsWrap = null;
+    var dots = dotsWrap ? dotsWrap.querySelectorAll('button') : [];
+    var count = slides.length;
+    var api = { root: root, current: 0 };
+
+    api.set = function (i) {
+      api.current = ((i % count) + count) % count; // wrap both directions
+      track.style.transform = 'translateX(-' + api.current * 100 + '%)';
+      dots.forEach(function (d, j) {
+        d.classList.toggle('is-active', j === api.current);
+        d.setAttribute('aria-selected', String(j === api.current));
+      });
+      slides.forEach(function (s, j) {
+        var active = j === api.current;
+        s.setAttribute('aria-hidden', String(!active));
+        s.querySelectorAll('a, button').forEach(function (el) {
+          el.tabIndex = active ? 0 : -1;
+        });
+      });
+    };
+
+    var prevBtn = root.querySelector('.ucc__arrow--prev');
+    var nextBtn = root.querySelector('.ucc__arrow--next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { api.set(api.current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { api.set(api.current + 1); });
+    dots.forEach(function (d, j) {
+      d.addEventListener('click', function () { api.set(j); });
+    });
+
+    var touchX = null;
+    track.addEventListener('touchstart', function (e) {
+      touchX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 40) api.set(api.current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+
+    api.set(0);
+    carousels.push(api);
+  });
+
+  if (carousels.length) {
+    // Arrow keys drive whichever carousel is closest to the viewport center
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var tag = (document.activeElement && document.activeElement.tagName) || '';
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      var mid = window.innerHeight / 2;
+      var best = null, bestDist = Infinity;
+      carousels.forEach(function (c) {
+        var r = c.root.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        var d = Math.abs((r.top + r.bottom) / 2 - mid);
+        if (d < bestDist) { bestDist = d; best = c; }
+      });
+      if (!best) return;
+      e.preventDefault();
+      best.set(best.current + (e.key === 'ArrowRight' ? 1 : -1));
     });
   }
 
